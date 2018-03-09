@@ -19,7 +19,7 @@ class Venue(models.Model):
         return self.name
 
 class Event(models.Model):
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=128, blank=True)
     venue = models.ForeignKey(Venue)
     artist = models.ForeignKey(Artist)
     date = models.DateField()
