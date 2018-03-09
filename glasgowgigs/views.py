@@ -10,3 +10,12 @@ def index(request):
 def about(request):
     context_dict = {}
     return render(request, 'glasgowgigs/about.html', context=context_dict)
+
+def artists(request):
+    context_dict = {}
+    return render(request, 'glasgowgigs/artist.html', context=context_dict)
+
+def venues(request):
+    context_dict = {}
+    return render(request, 'glasgowgigs/venue.html', context=context_dict)
+
