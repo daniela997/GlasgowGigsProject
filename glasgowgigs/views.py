@@ -19,3 +19,5 @@ def venues(request):
     context_dict = {}
     return render(request, 'glasgowgigs/venue.html', context=context_dict)
 
+
+    
