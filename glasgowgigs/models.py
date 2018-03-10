@@ -8,6 +8,7 @@ class Artist(models.Model):
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
+    genre = models.CharField(max_length=128)
 
 
     def save(self, *args, **kwargs):
@@ -20,7 +21,7 @@ class Artist(models.Model):
 
 class Venue(models.Model):
     name = models.CharField(max_length=128, unique=True)
-    address = models.CharField(max_length=128, unique=True) 
+    address = models.CharField(max_length=128) 
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
@@ -40,8 +41,9 @@ class Event(models.Model):
     name = models.CharField(max_length=128, blank=True)
     bookings = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
-    likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
+   
+    
 
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
