@@ -43,8 +43,6 @@ class Event(models.Model):
     views = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
    
-    
-
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
     def save (self, *args, **kwargs):
