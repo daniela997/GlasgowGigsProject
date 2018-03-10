@@ -1,24 +1,17 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<html>
-<head>
-<title>GlasgowGigs</title>
-<!-- CSS -->
-<link rel="stylesheet" href="{% static "css/base.css" %}" />
-<!-- JavaScript -->
-<script src="{% static "js/jquery.js" %}"></script>
-</head>
-<body>
-<h1>Welcome to GlasgowGigs</h1>
-<div>
-This is the index page. <br />
-<a href="/glasgowgigs/about/">About</a><br />
-<a href="/glasgowgigs/about/">Artists</a><br />
-<a href="/glasgowgigs/about/">Venues</a><br />
+{% extends "glasgowgigs/base.html" %}
 
-<!-- Image -->
-<img src="{% static "images/main.jpg" %}" alt="ABC" /></br>
-<strong>{{ boldmessage }}</strong><br />
-</div>
-</body>
-</html>
+{% block content %}
+<h1>GlasgowGigs Home</h1>
+
+  <p>Welcome to <em>GlasgowGigs</em>! This is a basic Django framework app with the purpose of connecting Glaswegian music fans with their favourite local acts and venues.</p>
+
+
+  <p>On GlasgowGigs there are:</p>
+  <ul>
+  	<li>{{ num_artists }} <strong>local artists</strong></li>
+	<li>{{ num_venues }} <strong>local venues</strong></li>
+	<li>{{ num_events }} <strong>upcoming gigs</strong></li>
+  </ul>
+{% load static %}
+<img src="{% static "images/logo.png" %}" alt="logo" /></br>
+{% endblock %}

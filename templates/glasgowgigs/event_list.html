@@ -1,0 +1,19 @@
+{% extends "glasgowgigs/base.html" %}
+
+{% block content %}
+    <h1>Events on GlasgowGigs</h1>
+
+    {% if event_list %}
+    <ul>
+
+      {% for event in event_list %}
+      <li>
+        <a href="{{ event.get_absolute_url }}">{{ event.name }}</a> When: {{event.date}}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no events.</p>
+    {% endif %}       
+{% endblock %}
