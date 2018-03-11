@@ -1,6 +1,8 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 
 class Artist(models.Model):
@@ -9,6 +11,11 @@ class Artist(models.Model):
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
     genre = models.CharField(max_length=128)
+    youtube = models.URLField(blank=True)
+    instagram = models.URLField(blank=True)
+    soundcloud = models.URLField(blank=True)
+    info = models.TextField()
+    photo = models.ImageField(upload_to='images/artists/', blank=True)
 
 
     def save(self, *args, **kwargs):
@@ -18,6 +25,9 @@ class Artist(models.Model):
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('artist-detail', kwargs={'slug': self.slug})
+
 
 class Venue(models.Model):
     name = models.CharField(max_length=128, unique=True)
@@ -25,7 +35,7 @@ class Venue(models.Model):
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
-
+    photo = models.ImageField(upload_to='images/venues/', blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
@@ -54,6 +64,8 @@ class Event(models.Model):
     class Meta:
         unique_together = ('venue', 'artist', 'date')
         # to make sure that we don't have two instances of an event with of the same artist in the same venue at the same time
+
+
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)

@@ -1,0 +1,19 @@
+{% extends "glasgowgigs/base.html" %}
+
+{% block content %}
+  <h1>{{ artist.name }}</h1>
+
+  <p><strong>Social Media Links:</strong></p>
+  <p><a href={{artist.instagram}}>instagram</a> 
+	<a href={{artist.youtube}}>youtube</a> 
+	<a href={{artist.soundcloud}}>soundcloud</a>
+  </p>
+ {% load static %}
+<img src={{artist.photo.url}} alt={{artist.name}} /></br>
+  <p>{{ artist.info }}</p>
+  <p><strong>Genre:</strong>{{artist.genre}}</p>  
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Events</h4>
+  </div>
+{% endblock %}

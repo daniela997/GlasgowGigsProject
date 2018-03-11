@@ -27,5 +27,7 @@ urlpatterns = [
     url(r'^artists/', views.ArtistListView.as_view(), name='artists'),
     url(r'^venues/', views.VenueListView.as_view(), name='venues'),
     url(r'^events/', views.EventListView.as_view(), name='events'),
+    url(r'^artist/(?P<slug>[-\w]+)/$', views.ArtistDetailView.as_view(), name='artist-detail'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
