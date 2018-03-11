@@ -44,6 +44,9 @@ class Venue(models.Model):
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('venue-detail', kwargs={'slug': self.slug})
+    
 class Event(models.Model):
     venue = models.ForeignKey(Venue)
     artist = models.ForeignKey(Artist)
@@ -65,7 +68,8 @@ class Event(models.Model):
         unique_together = ('venue', 'artist', 'date')
         # to make sure that we don't have two instances of an event with of the same artist in the same venue at the same time
 
-
+    def get_absolute_url(self):
+        return reverse('event-detail', kwargs={'slug': self.slug})
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)

@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^venues/', views.VenueListView.as_view(), name='venues'),
     url(r'^events/', views.EventListView.as_view(), name='events'),
     url(r'^artist/(?P<slug>[-\w]+)/$', views.ArtistDetailView.as_view(), name='artist-detail'),
+    url(r'^venue/(?P<slug>[-\w]+)/$', views.VenueDetailView.as_view(), name='venue-detail'),
+    url(r'^event/(?P<slug>[-\w]+)/$', views.EventDetailView.as_view(), name='event-detail'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

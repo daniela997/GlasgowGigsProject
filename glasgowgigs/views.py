@@ -49,3 +49,11 @@ class EventListView(generic.ListView):
     
 class ArtistDetailView(generic.DetailView):
     model = Artist
+
+class VenueDetailView(generic.DetailView):
+    model = Venue
+
+class EventDetailView(generic.DetailView):
+    model = Event
+
+

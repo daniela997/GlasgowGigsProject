@@ -1,0 +1,12 @@
+{% extends "glasgowgigs/base.html" %}
+
+{% block content %}
+  <h1>{{ venue.name }}</h1>
+ {% load static %}
+<img src={{venue.photo.url}} alt={{venue.name}} /></br>
+  <p><strong>Location:</strong></p>
+  <p>{{venue.address}}</p>
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Events</h4>
+  </div>
+{% endblock %}
