@@ -2,6 +2,12 @@
 
 {% block content %}
   <h1>{{ venue.name }}</h1>
+
+  <p><strong>Social Media Links:</strong></p>
+  <p><a href={{venue.instagram}}><img src="{% static "images/instagram-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
+  <a href={{venue.twitter}}><img src="{% static "images/twitter-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
+  <a href={{venue.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
+  
  {% load static %}
 <img src={{venue.photo.url}} alt={{venue.name}} /></br>
   <p><strong>Location:</strong></p>
