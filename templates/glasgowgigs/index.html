@@ -1,17 +1,28 @@
 {% extends "glasgowgigs/base.html" %}
+{% load static %}
 
 {% block content %}
-<h1>GlasgowGigs Home</h1>
-
-  <p>Welcome to <em>GlasgowGigs</em>! This is a basic Django framework app with the purpose of connecting Glaswegian music fans with their favourite local acts and venues.</p>
 
 
-  <p>On GlasgowGigs there are:</p>
-  <ul>
-  	<li>{{ num_artists }} <strong>local artists</strong></li>
-	<li>{{ num_venues }} <strong>local venues</strong></li>
-	<li>{{ num_events }} <strong>upcoming gigs</strong></li>
-  </ul>
-{% load static %}
-<img src="{% static "images/logo.png" %}" alt="logo" /></br>
+    <head>
+        <title>GlasgowGigs Home</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    </head>
+
+    <h1>GlasgowGigs Home</h1>
+
+    <p>Welcome to <em>GlasgowGigs</em>!
+        This is a basic Django framework app with the purpose of connecting
+        Glaswegian music fans with their favourite local acts and venues.
+        <br>
+        <br>
+        On GlasgowGigs there are:
+    </p>
+
+    <ul class="index-nav">
+  	    <li>{{ num_artists }} <strong>local artists</strong></li>
+	    <li>{{ num_venues }} <strong>local venues</strong></li>
+	    <li>{{ num_events }} <strong>upcoming gigs</strong></li>
+    </ul>
+
 {% endblock %}
