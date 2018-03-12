@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
-
 class Artist(models.Model):
     name = models.CharField(max_length=128, unique=True)
     views = models.IntegerField(default=0)
