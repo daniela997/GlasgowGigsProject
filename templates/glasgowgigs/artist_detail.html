@@ -1,5 +1,5 @@
 {% extends "glasgowgigs/base.html" %}
-
+{% load staticfiles %}
 {% block content %}
   <h1>{{ artist.name }}</h1>
 
@@ -7,11 +7,10 @@
   <p><a href={{artist.instagram}}><img src="{% static "images/instagram-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.youtube}}><img src="{% static "images/youtube-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.soundcloud}}><img src="{% static "images/soundcloud-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
-  <a href={{artist.spotify}}><img src="{% static "images/spotify-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.twitter}}><img src="{% static "images/twitter-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
 
- {% load static %}
+
 <img src={{artist.photo.url}} alt={{artist.name}} /></br>
   <p>{{ artist.info }}</p>
   <p><strong>Genre:</strong>{{artist.genre}}</p>  

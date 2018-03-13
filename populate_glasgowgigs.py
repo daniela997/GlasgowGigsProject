@@ -15,19 +15,25 @@ def populate():
         {"name": "Shogun", "genre": "hip-hop", "views": 20, "likes": 15,
          "youtube": "https://www.youtube.com/channel/UC3IizCaGplXl7CWw1hKzHYg",
          "instagram": "https://www.instagram.com/shogun_mftm/",
-         "soundcloud": "https://soundcloud.com/shogun_official}",
+         "soundcloud": "https://soundcloud.com/shogun_official",
+         "facebook": "https://www.facebook.com/Shogun.MFTM/",
+         "twitter": "https://twitter.com/shogan_sama",
          "photo": "shogun.jpg",
          "info": "Shogun is a 19 year-old rapper from Paisley, Scotland. He drew attention when the video for the song “Vulcan” went viral and gained over a million views on YouTube."},
         {"name": "Belle & Sebastian", "genre": "indie rock", "views": 40, "likes": 22,
          "youtube": "https://www.youtube.com/channel/UClz7tzOxFJT_v5iOfh8PPvg",
          "instagram": "https://www.instagram.com/bellesglasgow/",
-         "soundcloud": "https://soundcloud.com/belle-and-sebastian}",
+         "soundcloud": "https://soundcloud.com/belle-and-sebastian",
+         "facebook": "https://www.facebook.com/belleandsebastian/",
+         "twitter": "https://twitter.com/bellesglasgow/",
          "photo": "belleandsebastian.jpg",
          "info": "Belle and Sebastian are a Scottish band formed in Glasgow in January 1996. Led by Stuart Murdoch, the band has released 9 albums to date. Much of their work had been released on Jeepster Records, but they are now signed to Rough Trade Records in the United Kingdom and Matador Records in the United States. Though often praised by critics, Belle and Sebastian have enjoyed only limited commercial success."},
         {"name": "Mogwai", "genre": "post rock", "views": 32, "likes": 19,
          "youtube": "https://www.youtube.com/channel/UCqEG1Kwq26Zv2JfqdAwj9kg",
          "instagram": "https://www.instagram.com/mogwaiband/",
          "soundcloud": "https://soundcloud.com/mogwai-official",
+         "facebook": "https://www.facebook.com/mogwai/",
+         "twitter": "https://twitter.com/mogwaiband",
          "photo": "mogwai.jpg",
          "info": "Mogwai (/ˈmɒɡwaɪ/) are a Scottish post-rock band, formed in 1995 in Glasgow. The band consists of Stuart Braithwaite (guitar, vocals), Barry Burns (guitar, piano, synthesizer, vocals), Dominic Aitchison (bass guitar), and Martin Bulloch (drums). The band typically compose lengthy guitar-based instrumental pieces that feature dynamic contrast, melodic bass guitar lines, and heavy use of distortion and effects. The band were for several years signed to Glasgow label Chemikal Underground, and have been distributed by different labels such as Matador in the US and Play It Again Sam in the UK, but now use their own label Rock Action Records in the UK, and Sub Pop in North America. "}
         ]
@@ -61,7 +67,7 @@ def populate():
         add_venue(v["name"], v["address"], v["likes"], v["views"], v["photo"])
 		
     for a in artists:
-        add_artist(a["name"], a["genre"], a["likes"], a["views"], a["youtube"], a["instagram"], a["soundcloud"], a["info"], a["photo"])
+        add_artist(a["name"], a["genre"], a["likes"], a["views"], a["youtube"], a["instagram"], a["soundcloud"], a["twitter"], a["facebook"], a["info"], a["photo"])
         if a["name"] in events.keys():
             for v in events[a["name"]].keys():
                 venue = Venue.objects.get(name=v)
@@ -77,7 +83,7 @@ def populate():
 
 
 
-def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, info, photo):
+def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, twitter, facebook, info, photo):
     a = Artist.objects.get_or_create(name=name)[0]
     a.name=name
     a.genre=genre
@@ -86,6 +92,8 @@ def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, info, 
     a.youtube = youtube
     a.instagram = instagram
     a.soundcloud = soundcloud
+    a.twitter = twitter
+    a.facebook = facebook
     a.info = info
     a.photo = ImageFile(open(photo, "rb"))      
     a.save()

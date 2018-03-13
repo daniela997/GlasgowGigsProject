@@ -13,6 +13,8 @@ class Artist(models.Model):
     youtube = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     soundcloud = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
     info = models.TextField()
     photo = models.ImageField(upload_to='images/artists/', blank=True)
 
