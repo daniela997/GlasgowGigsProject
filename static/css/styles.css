@@ -27,3 +27,43 @@ p {
     list-style: none;
     text-align: center;
 }
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+html, body {
+  height: 100%;
+}
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+.navmenu {
+  z-index: 1;
+}
+.canvas {
+  position: absolute;
+  left: 0;
+  right: 0!important;
+  z-index: 2;
+  min-height: 100%;
+  padding: 50px 0 0 0;
+  background: #fff;
+}
+.navbar-toggle {
+    display: block;
+}
+.navbar {
+    right: auto;
+    background: none;
+    border: none;
+}
+
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+}
