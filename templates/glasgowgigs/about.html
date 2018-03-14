@@ -1,18 +1,26 @@
-<!DOCTYPE html>
+{% extends 'glasgowgigs/base.html' %}
 {% load staticfiles %}
-<html>
 
+{% block content %}
     <head>
         <title>About</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
     </head>
 
     <body>
-        <h1>Here is our about page</h1>
-        <div>
-        All about our website. <br />
+
+    <h1>About Us</h1>
+
+        <p>This website was created by: </p>
+        <br />
             <strong>{{ boldmessage }}</strong><br />
-        </div>
+
 
     </body>
 
-</html>
+
+
+
+{% endblock %}
