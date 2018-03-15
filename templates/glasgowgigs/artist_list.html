@@ -1,26 +1,44 @@
 {% extends "glasgowgigs/base.html" %}
 {% load static %}
 
-
 {% block content %}
-<head>
-        <title>Artists</title>
-            <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-    </head>
     <h1>Artists on GlasgowGigs</h1>
 
-    {% if artist_list %}
+    {% if venue_list %}
     <ul>
 
-      {% for artist in artist_list %}
+      {% for venue in venue_list %}
       <li>
-        <a href="{{ artist.get_absolute_url }}">{{ artist.name }}</a> Genre: {{artist.genre}}
+        <a href="{{ venue.get_absolute_url }}">{{ venue.name }}</a> Where: {{venue.address}}
       </li>
       {% endfor %}
 
     </ul>
     {% else %}
       <p>There are no artists.</p>
-    {% endif %}       
+    {% endif %}
+
+<div class="w3-row-padding">
+    <div class="w3-third">
+      <img src="{% static 'images/mogwai.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+      <caption><h3>Mogwai<h3></caption>
+      <img src="{% static 'images/belleandsebastian.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+    <caption><h3>Belle and Sebastian<h3></caption>
+
+    </div>
+
+    <div class="w3-third">
+      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+            <caption><h3>Artist Name<h3></caption>
+      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+            <caption><h3>Artist Name<h3></caption>
+    </div>
+
+     <div class="w3-third">
+      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+            <caption><h3>Artist Name<h3></caption>
+    <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+        <caption><h3>Artist Name<h3></caption>
+    </div>
+  </div>
 {% endblock %}

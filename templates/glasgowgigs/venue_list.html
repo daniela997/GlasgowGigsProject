@@ -1,6 +1,8 @@
 {% extends "glasgowgigs/base.html" %}
 
 {% block content %}
+{% load static %}
+
     <h1>Venues on GlasgowGigs</h1>
 
     {% if venue_list %}
@@ -15,5 +17,29 @@
     </ul>
     {% else %}
       <p>There are no venues.</p>
-    {% endif %}       
+    {% endif %}
+
+<div class="w3-row-padding">
+    <div class="w3-third">
+      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+      <caption><h3>Flying Duck<h3></caption>
+      <img src="{% static 'images/main.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+    <caption><h3>O2 ABC<h3></caption>
+
+    </div>
+
+    <div class="w3-third">
+      <img src="{% static 'images/swg3.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+            <caption><h3>SWG3<h3></caption>
+      <img src="{% static 'images/kingtuts.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+            <caption><h3>King Tut's<h3></caption>
+    </div>
+
+     <div class="w3-third">
+     <img src="{% static 'images/broadcast.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+        <caption><h3>Broadcast<h3></caption>
+    <img src="{% static 'images/CCA.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
+        <caption><h3>CCA<h3></caption>
+    </div>
+  </div>
 {% endblock %}
