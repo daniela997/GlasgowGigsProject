@@ -5,6 +5,8 @@ from django.views import generic
 from glasgowgigs.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 def index(request):
     #context_dict = {'boldmessage': "Crunch, creamy, cookie, candy, cupcake!"}
@@ -110,4 +112,13 @@ def user_login(request):
 
     else:
         return render(request, 'glasgowgigs/login.html', {})
+
+@login_required
+def restricted(request):
+    return HttpResponse("Since you are logged in, you can see this text!")
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('index'))
 
