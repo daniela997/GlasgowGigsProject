@@ -19,27 +19,29 @@
       <p>There are no venues.</p>
     {% endif %}
 
+
+
 <div class="w3-row-padding">
     <div class="w3-third">
-      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-      <caption><h3>Flying Duck<h3></caption>
-      <img src="{% static 'images/main.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-    <caption><h3>O2 ABC<h3></caption>
-
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Flying Duck</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/main.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>O2 ABC</h3></caption>
     </div>
 
     <div class="w3-third">
-      <img src="{% static 'images/swg3.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-            <caption><h3>SWG3<h3></caption>
-      <img src="{% static 'images/kingtuts.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-            <caption><h3>King Tut's<h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/swg3.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>SWG3</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/kingtuts.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>King Tut's</h3></caption>
     </div>
 
-     <div class="w3-third">
-     <img src="{% static 'images/broadcast.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-        <caption><h3>Broadcast<h3></caption>
-    <img src="{% static 'images/CCA.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-        <caption><h3>CCA<h3></caption>
+    <div class="w3-third">
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/broadcast.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Broadcast</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/CCA.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>CCA</h3></caption>
     </div>
   </div>
+
 {% endblock %}

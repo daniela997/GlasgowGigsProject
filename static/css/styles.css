@@ -52,6 +52,7 @@ html, body {
 .navbar-toggle {
     display: block;
 }
+
 .navbar {
     right: auto;
     background: none;
@@ -65,6 +66,7 @@ html, body {
 function w3_open() {
     document.getElementById("mySidebar").style.display = "block";
 }
+
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
 }

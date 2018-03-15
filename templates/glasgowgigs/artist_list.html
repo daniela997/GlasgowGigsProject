@@ -20,25 +20,25 @@
 
 <div class="w3-row-padding">
     <div class="w3-third">
-      <img src="{% static 'images/mogwai.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-      <caption><h3>Mogwai<h3></caption>
-      <img src="{% static 'images/belleandsebastian.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-    <caption><h3>Belle and Sebastian<h3></caption>
-
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/mogwai.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Mogwai</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/belleandsebastian.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Belle and Sebastian</h3></caption>
     </div>
 
     <div class="w3-third">
-      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-            <caption><h3>Artist Name<h3></caption>
-      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-            <caption><h3>Artist Name<h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Artist Name</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Artist Name</h3></caption>
     </div>
 
-     <div class="w3-third">
-      <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-            <caption><h3>Artist Name<h3></caption>
-    <img src="{% static 'images/flyingduck.jpg' %}" style="width:100%" onclick="onClick(this)" alt="">
-        <caption><h3>Artist Name<h3></caption>
+    <div class="w3-third">
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Artist Name</h3></caption>
+        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
+        <caption><h3>Artist Name</h3></caption>
     </div>
   </div>
+
 {% endblock %}
