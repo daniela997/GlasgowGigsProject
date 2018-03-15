@@ -1,5 +1,6 @@
 from django.contrib import admin
 from glasgowgigs.models import Artist, Venue, Event
+from glasgowgigs.models import UserProfile
 
 # Define the artist class
 class ArtistAdmin(admin.ModelAdmin):
@@ -36,4 +37,6 @@ class EventAdmin(admin.ModelAdmin):
 # Register the artist class with the associated model
 admin.site.register(Event, EventAdmin)
 
+#Register 
+admin.site.register(UserProfile)
 
