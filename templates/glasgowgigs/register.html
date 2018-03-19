@@ -5,10 +5,10 @@
     <h1>Register for GlasgowGigs</h1>
 
 {% if registered %}
-<strong>thank you for registering!</strong>
+<p><strong>thank you for registering!</strong></p>
 <a href="{% url 'index' %}">Return to the homepage.</a><br />
 {% else %}
-<strong>register here!</strong><br />
+<p><strong>register here!</strong></p><br />
 <form id="user_form" method="post" action="{% url 'register' %}"
 enctype="multipart/form-data">
 
@@ -24,4 +24,4 @@ enctype="multipart/form-data">
 {% endif %}
 {% endblock %}
 
-    
+
