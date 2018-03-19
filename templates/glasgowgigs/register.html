@@ -2,15 +2,15 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h1>Register for GlasgowGigs</h1>
-
+<div class="w3-container w3-padding-30" id="projects">
+    <h2 class="w3-border-bottom w3-border-purple w3-padding-16">Register for GlasgowGigs</h2>
 {% if registered %}
-<p><strong>thank you for registering!</strong></p>
-<a href="{% url 'index' %}">Return to the homepage.</a><br />
+<p><strong>Thank You for Registering!</strong></p>
+<a href="{% url 'index' %}">Return to Home.</a><br />
 {% else %}
-<p><strong>register here!</strong></p><br />
+<p><strong>Register Here!</strong></p><br />
 <form id="user_form" method="post" action="{% url 'register' %}"
-enctype="multipart/form-data">
+enctype="multipart/form-data"></form>
 
 {% csrf_token %}
 
@@ -20,7 +20,6 @@ enctype="multipart/form-data">
 
 <!-- Provide a button to click to submit the form. -->
 <input type="submit" name="submit" value="Register" />
-</form>
 {% endif %}
 {% endblock %}
 
