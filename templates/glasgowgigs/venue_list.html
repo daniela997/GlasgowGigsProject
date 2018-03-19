@@ -1,9 +1,8 @@
 {% extends "glasgowgigs/base.html" %}
-
-{% block content %}
 {% load static %}
+{% block content %}
 
-    <h1>Venues on GlasgowGigs</h1>
+<h1>Venues on GlasgowGigs</h1>
 
     {% if venue_list %}
     <ul>
@@ -21,27 +20,42 @@
 
 
 
-<div class="w3-row-padding">
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Flying Duck</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/main.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>O2 ABC</h3></caption>
+  <div class="w3-row-padding">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Flying Duck</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="Flying Duck" style="width:100%">
+      </div>
     </div>
-
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/swg3.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>SWG3</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/kingtuts.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>King Tut's</h3></caption>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">O2 ABC</div>
+        <img src="{% static 'images/main.jpg' %}" alt="O2 ABC" style="width:100%">
+      </div>
     </div>
-
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/broadcast.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Broadcast</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/CCA.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>CCA</h3></caption>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">SWG3</div>
+        <img src="{% static 'images/swg3.jpg' %}" alt="SWG3" style="width:100%">
+      </div>
     </div>
-  </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">King Tut's</div>
+        <img src="{% static 'images/kingtuts.jpg' %}" alt="King Tut's" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Broadcast</div>
+        <img src="{% static 'images/broadcast.jpg' %}" alt="Broadcast" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">CCA</div>
+        <img src="{% static 'images/CCA.jpg' %}" alt="CCA" style="width:100%">
+      </div>
+    </div>
 
 {% endblock %}

@@ -1,6 +1,8 @@
 {% extends "glasgowgigs/base.html" %}
 
 {% block content %}
+{% load static %}
+
     <h1>Events on GlasgowGigs</h1>
 
     {% if event_list %}
@@ -15,5 +17,45 @@
     </ul>
     {% else %}
       <p>There are no events.</p>
-    {% endif %}       
+    {% endif %}
+
+  <div class="w3-row-padding">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Mogwai</div>
+        <img src="{% static 'images/mogwai.jpg' %}" alt="Mogwai" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Belle and Sebastian</div>
+        <img src="{% static 'images/belleandsebastian.jpg' %}" alt="Belle and Sebastian" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+
+
 {% endblock %}

@@ -82,3 +82,15 @@ nav ul { list-style-type: none; }
     display: block;
     margin: 0 auto;
 }
+
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
