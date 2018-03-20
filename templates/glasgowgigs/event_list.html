@@ -1,10 +1,8 @@
 {% extends "glasgowgigs/base.html" %}
 
 {% block content %}
-{% load static %}
+    <h1>Events on GlasgowGigs</h1>
 
-<div class="w3-container w3-padding-30" id="projects">
-    <h2 class="w3-border-bottom w3-border-purple w3-padding-16">Events on GlasgowGigs</h2>
     {% if event_list %}
     <ul>
 
@@ -17,45 +15,5 @@
     </ul>
     {% else %}
       <p>There are no events.</p>
-    {% endif %}
-
-  <div class="w3-row-padding">
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Mogwai @ Kings Tut's</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/mogwai.jpg' %}" alt="Mogwai" style="width:100%"></a>
-      </div>
-    </div>
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Belle and Sebastian @ King Tut's</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/belleandsebastian.jpg' %}" alt="Belle and Sebastian" style="width:100%"></a>
-      </div>
-    </div>
-    <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Shogun @ SWG3</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/shogun.jpg' %}" alt="House" style="width:100%"></a>
-      </div>
-    </div>
-      <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%"></a>
-      </div>
-    </div>
-      <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%"></a>
-      </div>
-    </div>
-      <div class="w3-col l4 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
-        <a href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%"></a>
-      </div>
-    </div>
-
-
+    {% endif %}       
 {% endblock %}
