@@ -4,15 +4,16 @@
     <h1>Venues on GlasgowGigs</h1>
 
     {% if venue_list %}
-    <ul>
 
       {% for venue in venue_list %}
-      <li>
-        <a href="{{ venue.get_absolute_url }}">{{ venue.name }}</a> Where: {{venue.address}}
-      </li>
+		<div class="gallery">
+		  <a target="_blank" href="{{ venue.get_absolute_url }}">
+			<img src="{{venue.photo.url}}" alt="{{ venue.name }}" width="300" height="200">
+		  </a>
+		  <div class="desc">{{ venue.name }}</div>
+		</div>
       {% endfor %}
 
-    </ul>
     {% else %}
       <p>There are no venues.</p>
     {% endif %}       

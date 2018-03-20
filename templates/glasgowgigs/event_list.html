@@ -4,15 +4,16 @@
     <h1>Events on GlasgowGigs</h1>
 
     {% if event_list %}
-    <ul>
 
       {% for event in event_list %}
-      <li>
-        <a href="{{ event.get_absolute_url }}">{{ event.name }}</a> When: {{event.date}}
-      </li>
+		<div class="gallery">
+		  <a target="_blank" href="{{ event.get_absolute_url }}">
+			<img src="{{event.artist.photo.url}}" alt="{{ event.name }}" width="300" height="200">
+		  </a>
+		  <div class="desc">{{ event.name }}</div>
+		</div>
       {% endfor %}
 
-    </ul>
     {% else %}
       <p>There are no events.</p>
     {% endif %}       

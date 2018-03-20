@@ -4,15 +4,19 @@
     <h1>Artists on GlasgowGigs</h1>
 
     {% if artist_list %}
-    <ul>
+    
 
       {% for artist in artist_list %}
-      <li>
-        <a href="{{ artist.get_absolute_url }}">{{ artist.name }}</a> Genre: {{artist.genre}}
-      </li>
+		<div class="gallery">
+		  <a target="_blank" href="{{ artist.get_absolute_url }}">
+			<img src="{{artist.photo.url}}" alt="{{ artist.name }}" width="300" height="200">
+		  </a>
+		  <div class="desc">{{ artist.name }}</div>
+		</div>
       {% endfor %}
 
-    </ul>
+
+ 
     {% else %}
       <p>There are no artists.</p>
     {% endif %}       
