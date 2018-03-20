@@ -1,48 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
 {% extends "glasgowgigs/base.html" %}
 {% load static %}
 
 {% block content %}
 
-    <head>
-        <title>GlasgowGigs Home</title>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>GlasgowGigs Home</title>
+</head>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<body>
+<div id="indexPage">
 
-        <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-      width: 100%;
-      height: 100%;
-  }
-        </style>
-    </head>
+    <div id="header"><h1>GlasgowGigs Home</h1></div>
 
-    <h1>GlasgowGigs Home</h1>
-
-    <p>Welcome to <em>GlasgowGigs</em>!
+    <div id="content"><p>Welcome to <em>GlasgowGigs</em>!
         This is a basic Django framework app with the purpose of connecting
         Glaswegian music fans with their favourite local acts and venues.
         <br>
         <br>
-        On GlasgowGigs there are:
-    </p>
+        On GlasgowGigs there are: </p></div>
 
-    <ul class="index-nav">
-  	    <li>{{ num_artists }} <strong>local artists</strong></li>
-	    <li>{{ num_venues }} <strong>local venues</strong></li>
-	    <li>{{ num_events }} <strong>upcoming gigs</strong></li>
-    </ul>
+    <div id="list">
+        <ul class="index-nav">
+            <li>{{ num_artists }} <strong>local artists</strong></li>
+            <li>{{ num_venues }} <strong>local venues</strong></li>
+            <li>{{ num_events }} <strong>upcoming gigs</strong></li>
+        </ul></div>
 
-<html lang="en">
-
-<body>
-<div class="container-fluid">
+    <div class="container-fluid">
         <div id="myCarousel" class="carousel slide" data-ride="carousel"
              style="width:800px; height:400px;margin:0 auto">
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-
                 <div class="item active">
                     <img src="{% static 'images/belleandsebastian.jpg' %}" />
                     <div class="carousel-caption d-none d-md-block">
@@ -83,11 +75,13 @@
                 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
-
         </div>
+    </div>
+
 </div>
+
 </body>
 
-</html>
-
 {% endblock %}
+
+</html>
