@@ -2,13 +2,13 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h1>Login to your GlasgowGigs Account</h1>
-
+<div class="w3-container w3-padding-30" id="projects">
+    <h2 class="w3-border-bottom w3-border-purple w3-padding-16">Login to your GlasgowGigs Account</h2>
 <form id="login_form" method="post" action="{% url 'login' %}">
 {% csrf_token %}
-Username: <input type="text" name="username" value="" size="50" />
+Username: <div align="left"><input type="text" name="username" value="" size="50" /></div>
 <br />
-Password: <input type="password" name="password" value="" size="50" />
+Password:  <div align="left"><input type="password" name="password" value="" size="50" /></div>
 <br />
 <input type="submit" value="submit" />
 </form>

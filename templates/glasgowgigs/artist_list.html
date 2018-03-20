@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <h1>Artists in GlasgowGigs</h1>
+<div class="w3-container w3-padding-30" id="projects">
+    <h2 class="w3-border-bottom w3-border-purple w3-padding-16">Artists on GlasgowGigs</h2>
 
     {% if venue_list %}
     <ul>
@@ -18,27 +19,43 @@
       <p>There are no artists.</p>
     {% endif %}
 
-<div class="w3-row-padding">
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/mogwai.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Mogwai</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/belleandsebastian.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Belle and Sebastian</h3></caption>
+  <div class="w3-row-padding">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Mogwai</div>
+        <img src="{% static 'images/mogwai.jpg' %}" alt="Mogwai" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Belle and Sebastian</div>
+        <img src="{% static 'images/belleandsebastian.jpg' %}" alt="Belle and Sebastian" style="width:100%">
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
+    </div>
+      <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-purple w3-padding">Artist Name</div>
+        <img src="{% static 'images/flyingduck.jpg' %}" alt="House" style="width:100%">
+      </div>
     </div>
 
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Artist Name</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Artist Name</h3></caption>
-    </div>
-
-    <div class="w3-third">
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Artist Name</h3></caption>
-        <a class="venue-hover" href="{% url 'index' %}"><img src="{% static 'images/flyingduck.jpg' %}" alt="index" style="max-width:100%"></a>
-        <caption><h3>Artist Name</h3></caption>
-    </div>
-  </div>
 
 {% endblock %}

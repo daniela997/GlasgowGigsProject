@@ -2,25 +2,76 @@
 {% load staticfiles %}
 
 {% block content %}
-    <head>
-        <title>About</title>
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    </head>
-
-    <body>
-
+<head>
     <h1>About Us</h1>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
 
-        <p>This website was created by: </p>
-        <br />
-            <strong>{{ boldmessage }}</strong><br />
+<div class="w3-container w3-padding-30" id="projects">
+    <h3 class="w3-border-bottom w3-border-purple w3-padding-16">What is GlasgowGigs?</h3>
+</div>
 
+<body>
+<p>
+    GlasgowGigs is a web app that connects music fans with local music events in Glasgow. Using GlasgowGigs, users can
+    find all the upcoming gigs in Glasgow, as well as popular venues and artists in Glasgow. On GlasgowGigs you will
+    find pages for Artists, Venues and Events. These pages contain information about the artist/venue/event. On the
+    artist page, you will find information on the artist as well as the artist's Instagram, SoundCloud, Twitter etc.
+    On the venue page, there is information about the location, including its whereabouts on GoogleMaps. On the Events
+    page information such as the time, venue and artist of the event is displayed. Users are able to purchase tickets through
+    links on GlasgowGigs to outside sources such as TicketMaster and SeeTickets.
+</p>
 
-    </body>
+<p>
+    Through our login feature on GlasgowGigs, users are able to save events that they are interested in,
+    as well as bookmark booked events. Also, users can save their favorite artists and venues for the purpose of
+    future gigs and events. GlasgowGigs is a accessible platform for music fans to keep track of all of the music
+    events that they are interested in.
+</p>
 
+<div class="w3-container w3-padding-30" id="projects">
+    <h3 class="w3-border-bottom w3-border-purple w3-padding-16">Future Plans for GlasgowGigs</h3>
+</div>
 
+<p>
+    We plan on expanding GlasgowGigs to the whole of Scotland. Our aim is to let artists have control over where and how
+    they play their gigs, as well as edit their own pages and information to reach out to their fans. We also aim to let
+    venues edit their own pages in terms of recent photos as well as information.
+</p>
 
+<div class="w3-container w3-padding-30" id="projects">
+    <h3 class="w3-border-bottom w3-border-purple w3-padding-16">Who are we?</h3>
+</div>
+
+<p>
+    This website was created by Daniela, Martina and Julia. We are three 2nd year students studying Computer Science at the University of Glasgow.
+    Our common interest in both Web Programming and Music formed the idea of creating GlasgowGigs as we all noticed that there
+    is no easy platform for music fans in Glasgow to find all the upcoming gigs for local music, as well as a collective website
+    that has information on Glaswegian artists and venues.
+</p>
+
+</br>
+
+<div class="img-with-text">
+    <table width="100%">
+        <tr>
+            <td>
+                <div class="img-with-text"><img src="{% static 'images/daniela.jpg' %}">
+                    <h5>Daniela</h5>
+                </div>
+            </td>
+
+            <td>
+                <div class="img-with-text"><img src="{% static 'images/martina.jpg' %}">
+                    <h5>Martina</h5>
+                </div></td>
+
+            <td align="right">
+                <div class="img-with-text"><img src="{% static 'images/julia.jpg' %}">
+                    <h5>Julia</h5>
+                </div></td>
+        </tr>
+    </table>
+</div>
 
 {% endblock %}
