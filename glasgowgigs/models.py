@@ -77,9 +77,9 @@ class UserProfile(models.Model):
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     picture = models.ImageField(upload_to='profile_images', blank=True)
-    bookings = models.ManyToManyField(Event)
-    favourite_artists = models.ManyToManyField(Artist)
-    favourite_venues = models.ManyToManyField(Venue)
+    bookings = models.ManyToManyField(Event, blank=True)
+    favourite_artists = models.ManyToManyField(Artist, blank=True)
+    favourite_venues = models.ManyToManyField(Venue, blank=True)
     
     def __str__(self):
         return self.user.username

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import os
+import os, sys
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 import django
 django.setup()
@@ -10,7 +10,8 @@ from django.core.files.images import ImageFile
 
 
 def populate():
-    user = []
+    
+    script_dir = os.getcwd()
     
     artists = [
         {"name": "Shogun", "genre": "hip-hop", "views": 20, "likes": 15,
@@ -19,7 +20,7 @@ def populate():
          "soundcloud": "https://soundcloud.com/shogun_official",
          "facebook": "https://www.facebook.com/Shogun.MFTM/",
          "twitter": "https://twitter.com/shogan_sama",
-         "photo": "shogun.jpg",
+         "photo": 'shogun.jpg',
          "info": "Shogun is a 19 year-old rapper from Paisley, Scotland. He drew attention when the video for the song “Vulcan” went viral and gained over a million views on YouTube."},
         {"name": "Belle & Sebastian", "genre": "indie rock", "views": 40, "likes": 22,
          "youtube": "https://www.youtube.com/channel/UClz7tzOxFJT_v5iOfh8PPvg",
@@ -27,7 +28,7 @@ def populate():
          "soundcloud": "https://soundcloud.com/belle-and-sebastian",
          "facebook": "https://www.facebook.com/belleandsebastian/",
          "twitter": "https://twitter.com/bellesglasgow/",
-         "photo": "belleandsebastian.jpg",
+         "photo": 'belleandsebastian.jpg',
          "info": "Belle and Sebastian are a Scottish band formed in Glasgow in January 1996. Led by Stuart Murdoch, the band has released 9 albums to date. Much of their work had been released on Jeepster Records, but they are now signed to Rough Trade Records in the United Kingdom and Matador Records in the United States. Though often praised by critics, Belle and Sebastian have enjoyed only limited commercial success."},
         {"name": "Mogwai", "genre": "post rock", "views": 32, "likes": 19,
          "youtube": "https://www.youtube.com/channel/UCqEG1Kwq26Zv2JfqdAwj9kg",
@@ -35,20 +36,20 @@ def populate():
          "soundcloud": "https://soundcloud.com/mogwai-official",
          "facebook": "https://www.facebook.com/mogwai/",
          "twitter": "https://twitter.com/mogwaiband",
-         "photo": "mogwai.jpg",
+         "photo": 'mogwai.jpg',
          "info": "Mogwai (/ˈmɒɡwaɪ/) are a Scottish post-rock band, formed in 1995 in Glasgow. The band consists of Stuart Braithwaite (guitar, vocals), Barry Burns (guitar, piano, synthesizer, vocals), Dominic Aitchison (bass guitar), and Martin Bulloch (drums). The band typically compose lengthy guitar-based instrumental pieces that feature dynamic contrast, melodic bass guitar lines, and heavy use of distortion and effects. The band were for several years signed to Glasgow label Chemikal Underground, and have been distributed by different labels such as Matador in the US and Play It Again Sam in the UK, but now use their own label Rock Action Records in the UK, and Sub Pop in North America. "}
         ]
 
     venues = [
         {"name": "King Tut's Wah Wah Hut",
          "address": "272A St Vincent St, Glasgow G2 5RL", "views": 45, "likes": 25,
-         "photo":"kingtuts.jpg"},
+         "photo": 'kingtuts.jpg'},
         {"name": "Flying Duck",
          "address": "142 Renfield St, Glasgow G2 3AU", "views": 33, "likes": 22,
-         "photo":"flyingduck.jpg"},
+         "photo": 'flyingduck.jpg'},
         {"name": "SWG3 Studio Warehouse",
          "address": "100 Eastvale Pl, Glasgow G3 8QG", "views": 37, "likes": 26,
-         "photo":"swg3.jpg"},
+         "photo": 'swg3.jpg'},
         ]
 
     events = {
