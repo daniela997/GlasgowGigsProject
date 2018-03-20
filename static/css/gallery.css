@@ -2,19 +2,33 @@ div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 180px;
+    width: 200px;
+    height: auto;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
-}
-
-div.gallery img {
-    width: 100%;
-    height: auto;
+    border: 1px solid #B40486;
 }
 
 div.desc {
     padding: 15px;
     text-align: center;
 }
+
+div.thumbnail {
+  position: relative;
+  width: 198px;
+  height: 150px;
+  overflow: hidden;
+}
+div.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
