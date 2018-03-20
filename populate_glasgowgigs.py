@@ -36,6 +36,9 @@ def populate():
          "twitter": "https://twitter.com/mogwaiband",
          "photo": "mogwai.jpg",
          "info": "Mogwai (/ˈmɒɡwaɪ/) are a Scottish post-rock band, formed in 1995 in Glasgow. The band consists of Stuart Braithwaite (guitar, vocals), Barry Burns (guitar, piano, synthesizer, vocals), Dominic Aitchison (bass guitar), and Martin Bulloch (drums). The band typically compose lengthy guitar-based instrumental pieces that feature dynamic contrast, melodic bass guitar lines, and heavy use of distortion and effects. The band were for several years signed to Glasgow label Chemikal Underground, and have been distributed by different labels such as Matador in the US and Play It Again Sam in the UK, but now use their own label Rock Action Records in the UK, and Sub Pop in North America. "}
+        {"name": ""},
+        {"name": ""},
+        {"name": ""},
         ]
 
     venues = [
@@ -47,7 +50,16 @@ def populate():
          "photo":"flyingduck.jpg"},
         {"name": "SWG3 Studio Warehouse",
          "address": "100 Eastvale Pl, Glasgow G3 8QG", "views": 37, "likes": 26,
-         "photo":"swg3.jpg"}
+         "photo":"swg3.jpg"},
+        {"name": "O2 ABC",
+         "address": "300 Sauchiehall St, Glasgow G2 3JA", "views": 40, "likes": 20,
+         "photo":"main.jpg"},
+        {"name": "Broadcast",
+         "address": "427 Sauchiehall St, Glasgow G2 3LG", "views": 30, "likes": 23,
+         "photo": "broadcast.jpg"},
+        {"name": "Centre of Contemporary Arts",
+         "address": "350 Sauchiehall St, Glasgow G2 3JD", "views": 32, "likes": 25,
+         "photo": "CCA.jpg"}
         ]
 
     events = {
