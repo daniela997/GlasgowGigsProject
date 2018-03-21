@@ -4,14 +4,14 @@
 {% block content %}
 <div class="w3-container w3-padding-30" id="projects">
     <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{artist.name}}</font></h1>  </div>
-
+<div class="w3-container>
  <div class="w3-row">
   <div class="w3-threequarter">
       <img src={{artist.photo.url}} alt={{artist.name}} width="100%"></br>
     <p>{{ artist.info }}</p></div>
-
+    </div>
    <p><strong>Genre:</strong>{{artist.genre}}</p>
-
+<div class="w3-container w3-rest">
     <p><strong>Social Media Links:</strong></p>
   <p><a href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
@@ -19,14 +19,17 @@
   <a href={{artist.twitter}}><img src="{% static "images/twitter-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
 
-
+    {% if artist.video %}
 	{% video artist.video 'small' %}
+    {% endif %}
 
   <div style="margin-left:20px;margin-top:20px">
     <h4>Upcoming Events in Glasgow</h4>
   </div>
-
-
-
    </div>
+
+   <style>
+
+
+   <hr>
 {% endblock %}
