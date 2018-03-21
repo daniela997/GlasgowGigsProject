@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load avatar_tags %}
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8"/>
+
+
+<head>
+  <link rel="icon" href="{% static 'images/icon.ico' %}">
+
+  {% block title %}<title>GlasgowGigs</title>{% endblock %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<nav>
+<ul>
+<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
+  <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+  {% if user.is_authenticated %}
+	
+	<p>Hello {{ user.username }}!</p>
+	<p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p>
+    <p><a href="{% url 'auth_logout' %}?next=/glasgowgigs/" class="w3-bar-item w3-button">Logout</a></p>
+    <p><a href="{% url 'avatar_change' %}" class="w3-bar-item w3-button">Change your avatar</a></p>
+    <p><a href="{% url 'password' %}" class="w3-bar-item w3-button">Change your password</a></p>
+	<p><a href="{% url 'settings' %}" class="w3-bar-item w3-button">Settings</a></p>
+	
+  {% else %}
+  <li><a href="{% url 'registration_register' %}" class="w3-bar-item w3-button">Register</a></li>
+  <li><a href="{% url 'auth_login' %}" class="w3-bar-item w3-button">Login</a></li>
+{% endif %}
+
+</div>
+</nav>
+
+<div class="w3-container">
+      <img src="{% static 'images/logo.png' %}" alt="logo" style="width:200px;height:75px;"/>
+        <a href="{% url 'index' %}"><img src="{% static 'images/button-home.png' %}" alt="index" style="width:128px;height:64px;text-decoration:underline-on-hover"></a></h></li>
+        <a href="{% url 'about' %}"><img src="{% static 'images/button-about.png' %}" alt="index" style="width:128px;height:64px"></a>
+        <a href="{% url 'artists' %}"><img src="{% static 'images/button-artists.png' %}" alt="index" style="width:128px;height:64px"></a>
+        <a href="{% url 'venues' %}"><img src="{% static 'images/button-venues.png' %}" alt="index" style="width:128px;height:64px;"></a>
+        <a href="{% url 'events' %}"><img src="{% static 'images/button-events.png' %}" alt="index" style="width:128px;height:64px"></a>
+</div>
+
+</head>
+
+</html>
+
+      <div class="col-sm-10 ">
+      {% block content %}{% endblock %}
+      </div>
+      
+
+<script>
+list-style-type: none;
+</script>
+
+
