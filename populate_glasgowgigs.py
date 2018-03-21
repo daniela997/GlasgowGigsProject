@@ -42,13 +42,13 @@ def populate():
     venues = [
         {"name": "King Tut's Wah Wah Hut",
          "address": "272A St Vincent St, Glasgow G2 5RL", "views": 45, "likes": 25,
-         "photo": 'kingtuts.jpg', "latitude": '55.862629', "longitude": '-4.265005'},
+         "photo": 'kingtuts.jpg', "latitude": 55.862629, "longitude": -4.265005},
         {"name": "Flying Duck",
          "address": "142 Renfield St, Glasgow G2 3AU", "views": 33, "likes": 22,
-         "photo": 'flyingduck.jpg', "latitude": '55.8655041', "longitude": '-4.2550565'},
+         "photo": 'flyingduck.jpg', "latitude": 55.8655041, "longitude": -4.2550565},
         {"name": "SWG3 Studio Warehouse",
          "address": "100 Eastvale Pl, Glasgow G3 8QG", "views": 37, "likes": 26,
-         "photo": 'swg3.jpg', "latitude": '55.864523', "longitude": '-4.299685'},
+         "photo": 'swg3.jpg', "latitude": 55.864523, "longitude": -4.299685},
         ]
 
     events = {
