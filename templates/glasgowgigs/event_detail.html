@@ -1,9 +1,15 @@
 {% extends "glasgowgigs/base.html" %}
-
+{% load staticfiles %}
+{% load static %}
 {% block content %}
-  <h1>{{ event.name }}</h1>
- {% load static %}
-<img src={{event.artist.photo.url}} alt={{event.artist.name}} /></br>
+<div class="w3-container w3-padding-30" id="projects">
+    <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{ event.name }}</font></h1>  </div>
+<div class="w3-container>
+ <div class="w3-row">
+  <div class="w3-half">
+        <img src={{event.artist.photo.url}} alt={{event.artist.name}} width="100%"></br>
+    </div>
+<div class="w3-container w3-rest">
   <p><strong>Location:</strong></p>
   <p>{{event.venue.address}}</p>
   	<style>
@@ -13,8 +19,8 @@
        }
     </style>
 
-    <h3>Location: </h3>
-    <div id="map"></div>
+   <div align="center"><h3>Location: </h3></div>
+    <div align="center"><div id="map"></div>
     <script>
       function initMap() {
         var location = {lat: {{event.venue.latitude}}, lng: {{event.venue.longitude}} };
@@ -31,5 +37,6 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARbWl1n1ErFh0xCa_HHVtPC642A2iDH4Y&callback=initMap">
     </script>
-  
+</div>
+</div>
 {% endblock %}

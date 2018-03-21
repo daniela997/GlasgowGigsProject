@@ -6,10 +6,10 @@
     <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{artist.name}}</font></h1>  </div>
 <div class="w3-container>
  <div class="w3-row">
-  <div class="w3-threequarter">
+  <div class="w3-half">
       <img src={{artist.photo.url}} alt={{artist.name}} width="100%"></br>
     <p>{{ artist.info }}</p></div>
-    </div>
+    </div>    
    <p><strong>Genre:</strong>{{artist.genre}}</p>
 <div class="w3-container w3-rest">
     <p><strong>Social Media Links:</strong></p>
@@ -20,7 +20,7 @@
   <a href={{artist.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
 
     {% if artist.video %}
-	{% video artist.video 'small' %}
+	<div align="center">{% video artist.video 'small' %}</div>
     {% endif %}
 
   <div style="margin-left:20px;margin-top:20px">
@@ -28,8 +28,6 @@
   </div>
    </div>
 
-   <style>
 
-
-   <hr>
 {% endblock %}
+

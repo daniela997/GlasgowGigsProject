@@ -1,14 +1,15 @@
 {% extends "glasgowgigs/base.html" %}
 {% load staticfiles %}
 {% block content %}
+{% load static %}
 <div class="w3-container w3-padding-30" id="projects">
     <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{ venue.name }}</font></h1>  </div>
-  
- {% load static %}
+<div class="w3-container">
  <div class="w3-row">
-  <div class="w3-threequarter">
+  <div class="w3-half">
       <img src={{venue.photo.url}} alt={{venue.name}} width="100%"></br>
-
+      </div>
+<div class="w3-conatiner w3-rest">
 <p><strong>Social Media Links:</strong></p>
   <p><a href={{venue.instagram}}><img src="{% static "images/instagram-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{venue.twitter}}><img src="{% static "images/twitter-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
@@ -16,9 +17,8 @@
   <p><strong>Location:</strong></p>
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Events</h4>
+    <div align="center"><h4>Events</h4></div>
   </div>
-
 	<style>
       #map {
         height: 400px;
@@ -26,8 +26,8 @@
        }
     </style>
 	{% if venue.latitude and venue.longitude %}
-    <h3>Location: </h3>
-    <div id="map"></div>
+    <div align="center"><h3>Location: </h3>
+    <div align="center"><div id="map"></div>
     <script>
       function initMap() {
         var location = {lat: {{venue.latitude}}, lng: {{venue.longitude}} };
@@ -45,4 +45,7 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARbWl1n1ErFh0xCa_HHVtPC642A2iDH4Y&callback=initMap">
     </script>
     {% endif %}
+</div>
+</div>
+</div>
 {% endblock %}
