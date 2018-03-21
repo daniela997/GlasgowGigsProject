@@ -2,10 +2,7 @@
 {% load staticfiles %}
 
 {% block content %}
-<head>
-    <h1>About Us</h1>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
+<h1>About Us</h1>
 
 <div class="w3-container w3-padding-30" id="projects">
     <h3 class="w3-border-bottom w3-border-purple w3-padding-16">What is GlasgowGigs?</h3>
@@ -55,18 +52,18 @@
 <div class="img-with-text">
     <table width="100%">
         <tr>
-            <td>
+            <td align="center">
                 <div class="img-with-text"><img src="{% static 'images/daniela.jpg' %}">
                     <h5>Daniela</h5>
                 </div>
             </td>
 
-            <td>
+            <td align="center">
                 <div class="img-with-text"><img src="{% static 'images/martina.jpg' %}">
                     <h5>Martina</h5>
                 </div></td>
 
-            <td align="right">
+            <td align="center">
                 <div class="img-with-text"><img src="{% static 'images/julia.jpg' %}">
                     <h5>Julia</h5>
                 </div></td>
@@ -82,5 +79,9 @@
     and David Maxwell, <i>w3schools.com</i> for HTML & CSS guidance as well as for Bootstrap, and StackOverflow. We created our own logo and
     graphics using Photoshop online.
 </p>
+
+</br>
+
+</body>
 
 {% endblock %}
