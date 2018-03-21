@@ -2,8 +2,9 @@
 {% load staticfiles %}
 
 {% block content %}
+<div align="center">
 <div class="w3-container w3-padding-30" id="projects">
-    <h2 class="w3-border-bottom w3-border-purple w3-padding-16">Register for GlasgowGigs</h2>
+    <h2 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">Register for GlasgowGigs</font></h2>
 {% if registered %}
 <p><strong>Thank You for Registering!</strong></p>
 <a href="{% url 'index' %}">Return to Home.</a><br />
@@ -13,13 +14,14 @@
 enctype="multipart/form-data"></form>
 
 {% csrf_token %}
-
 <!-- Display each form -->
 {{ user_form.as_p }}
 {{ profile_form.as_p }}
 
+
 <!-- Provide a button to click to submit the form. -->
 <input type="submit" name="submit" value="Register" />
+</div>
 {% endif %}
 {% endblock %}
 
