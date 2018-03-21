@@ -5,13 +5,14 @@
 
     {% if venue_list %}
 
-      {% for venue in venue_list %}
-		<div class="gallery">
-		  <a target="_blank" href="{{ venue.get_absolute_url }}">
+       {% for venue in venue_list %}
+ 		<div class="gallery">
+ 		  <a target="_blank" href="{{ venue.get_absolute_url }}">
+			<img src="{{venue.photo.url}}" alt="{{ venue.name }}" width="300" height="200">
 			<div class="thumbnail"><img src="{{venue.photo.url}}" alt="{{ venue.name }}"></div>
-		  </a>
-		  <div class="desc">{{ venue.name }}</div>
-		</div>
+ 		  </a>
+ 		  <div class="desc">{{ venue.name }}</div>
+ 		</div>
       {% endfor %}
 
     {% else %}
