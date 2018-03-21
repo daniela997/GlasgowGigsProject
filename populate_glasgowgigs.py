@@ -1,5 +1,3 @@
-"""
-# -*- coding: utf-8 -*-
 import os, sys
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 import django
@@ -124,7 +122,3 @@ def add_event(venue, artist, date, bookings, views):
 if __name__ == '__main__':
     print("Starting GlasgowGigs population script...")
     populate()
-        
-
-        
-"""
