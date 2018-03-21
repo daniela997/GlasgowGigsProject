@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^artist/(?P<slug>[-\w]+)/$', views.ArtistDetailView.as_view(), name='artist-detail'),
     url(r'^venue/(?P<slug>[-\w]+)/$', views.VenueDetailView.as_view(), name='venue-detail'),
     url(r'^event/(?P<slug>[-\w]+)/$', views.EventDetailView.as_view(), name='event-detail'),
-    
+    url(r'^settings/$', views.settings, name='settings'),
+    url(r'^settings/password/$', views.password, name='password'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

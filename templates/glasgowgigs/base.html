@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
-
+{% load avatar_tags %}
 
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,7 +34,12 @@
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
   {% if user.is_authenticated %}
-  <li><a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a></li>
+	
+	<p>Hello {{ user.username }}!</p>
+	<p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p>
+    <p><a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a></p>
+    <p><a href="{% url 'avatar_change' %}" class="w3-bar-item w3-button">Change your avatar</a></p>
+
   {% else %}
   <li><a href="{% url 'register' %}" class="w3-bar-item w3-button">Register</a></li>
   <li><a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a></li>

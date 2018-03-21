@@ -11,7 +11,6 @@ from django.core.files.images import ImageFile
 
 def populate():
     
-    script_dir = os.getcwd()
     
     artists = [
         {"name": "Shogun", "genre": "hip-hop", "views": 20, "likes": 15,

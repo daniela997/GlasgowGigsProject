@@ -4,7 +4,11 @@ h1 {
     text-align: center;
 }
 
-
+h2 {
+    color: #B40486;
+    font-family: Verdana;
+    text-align: center;
+}
 
 #indexPage {
 
@@ -75,5 +79,10 @@ function w3_close() {
 nav ul { list-style-type: none; }
 
 
-
+.circular--square {
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+}
 

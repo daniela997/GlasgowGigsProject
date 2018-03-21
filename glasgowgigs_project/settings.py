@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'glasgowgigs',
+    'social_django',
+    'avatar',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'glasgowgigs_project.urls'
@@ -68,10 +71,19 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social_django.context_processors.backends',  # social login
+                'social_django.context_processors.login_redirect', # social login
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 STATICFILES_DIRS = [STATIC_DIR, ]
 
@@ -135,4 +147,17 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
-LOGIN_URL = '/glasgowgigs/login'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'index'
+
+# social login
+SOCIAL_AUTH_TWITTER_KEY = 'CKhr7VkgOaI5ZWFgxJ94UKe5Z'
+SOCIAL_AUTH_TWITTER_SECRET = 'dT4FIvfNNWQ0etdJiv2nEU1V5z8ffESyaV0RWu4zosobES7aJq'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '230596227513786'  
+SOCIAL_AUTH_FACEBOOK_SECRET = '56131aab4f5126bc981b5fa1cae303b5' 
+
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
