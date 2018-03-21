@@ -1,11 +1,8 @@
 {% extends "glasgowgigs/base.html" %}
 {% load static %}
-
 {% block content %}
 
-    <div id="content">
-        <h1>GlasgowGigs Home</h1>
-        <p>Welcome to <em>GlasgowGigs</em>!</br>
+    <div id="content"><p>Welcome to <em>GlasgowGigs</em>!
         This is a basic Django framework app with the purpose of connecting
         Glaswegian music fans with their favourite local acts and venues.
         <br>
@@ -21,8 +18,87 @@
     </div>
 </body>
 
+<div class="w3-container>
+ <div class="w3-row">
+  <div class="w3-third">
+      <h1>Artists</h1>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      {% for artists in artists_list %}
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src={{ artists.photo }} alt={{ artists.name }}>
+      <div class="carousel-caption">
+        <h3>{{ artists.name }}</h3>
+      </div>
+    </div>
+  </div>
 
-
+    {% endfor %}
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      </div>
+      
+    <div class="w3-third">
+    <h1>Venues</h1>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      {% for venues in venues_list %}
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src={{ venues.photo }} alt={{ venues.name }}>
+      <div class="carousel-caption">
+        <h3>{{ venues.name }}</h3>
+      </div>
+    </div>
+  </div>
+   {% endfor %}
+   <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+    
+<div class="w3-third">
+    <h1>Events</h1>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+      {% for events in events_list %}
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src={{ events.photo }} alt={{ events.name }}>
+      <div class="carousel-caption">
+        <h3>{{ events.name }}</h3>
+      </div>
+    </div>
+  </div>
+   {% endfor %}
+   <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+</div>
 {% endblock %}
 
 </html>
