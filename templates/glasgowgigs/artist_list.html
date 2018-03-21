@@ -1,26 +1,23 @@
 {% extends "glasgowgigs/base.html" %}
 
 {% block content %}
-    <div class="w3-container w3-padding-30" id="projects">
-    <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">Artists on GlasgowGigs</font></h1>
+    <h1>Artists on GlasgowGigs</h1>
 
     {% if artist_list %}
-
+    
 
       {% for artist in artist_list %}
-     {% for venue in venue_list %}
- 		<div class="gallery">
- 		  <a target="_blank" href="{{ artist.get_absolute_url }}">
-			<img src="{{artist.photo.url}}" alt="{{ artist.name }}" width="300" height="200">
-			<div class="thumbnail"><img src="{{artist.photo.url}}" alt="{{ artist.name }}"></div>
- 		  </a>
- 		  <div class="desc">{{ venue.name }}</div>
- 		</div>
+		<div class="gallery">
+		  <a target="_blank" href="{{ artist.get_absolute_url }}">
+				<div class="thumbnail"><img src="{{artist.photo.url}}" alt="{{artist.name}}" /></div>		  
+		  </a>
+		  <div class="desc">{{ artist.name }}</div>
+		</div>
       {% endfor %}
 
 
-
+ 
     {% else %}
       <p>There are no artists.</p>
-    {% endif %}
+    {% endif %}       
 {% endblock %}
