@@ -42,13 +42,13 @@ def populate():
     venues = [
         {"name": "King Tut's Wah Wah Hut",
          "address": "272A St Vincent St, Glasgow G2 5RL", "views": 45, "likes": 25,
-         "photo": 'kingtuts.jpg'},
+         "photo": 'kingtuts.jpg', "latitude": '55.862629', "longitude": '-4.265005'},
         {"name": "Flying Duck",
          "address": "142 Renfield St, Glasgow G2 3AU", "views": 33, "likes": 22,
-         "photo": 'flyingduck.jpg'},
+         "photo": 'flyingduck.jpg', "latitude": '55.8655041', "longitude": '-4.2550565'},
         {"name": "SWG3 Studio Warehouse",
          "address": "100 Eastvale Pl, Glasgow G3 8QG", "views": 37, "likes": 26,
-         "photo": 'swg3.jpg'},
+         "photo": 'swg3.jpg', "latitude": '55.864523', "longitude": '-4.299685'},
         ]
 
     events = {
@@ -65,7 +65,7 @@ def populate():
 
 
     for v in venues:
-        add_venue(v["name"], v["address"], v["likes"], v["views"], v["photo"])
+        add_venue(v["name"], v["address"], v["likes"], v["views"], v["photo"], v["latitude"], v["longitude"])
 		
     for a in artists:
         add_artist(a["name"], a["genre"], a["likes"], a["views"], a["youtube"], a["instagram"], a["soundcloud"], a["twitter"], a["facebook"], a["info"], a["photo"])
@@ -100,13 +100,15 @@ def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, twitte
     a.save()
     return a
 
-def add_venue(name, address, views, likes, photo):
+def add_venue(name, address, views, likes, photo, latitude, longitude):
     v = Venue.objects.get_or_create(name=name)[0]
     v.name = name
     v.address = address
     v.views = views
     v.likes = likes
-    v.photo = ImageFile(open(photo, "rb"))    
+    v.photo = ImageFile(open(photo, "rb"))   
+    v.latitude = latitude
+    v.longitude = longitude 
     v.save()
     return v
 
