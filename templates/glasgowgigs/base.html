@@ -34,32 +34,29 @@
 <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
   <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
   {% if user.is_authenticated %}
-    <p>Hello {{ user.username }}!</p>
-    <p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p>
+	
+	<p>Hello {{ user.username }}!</p>
+	<p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p>
     <p><a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a></p>
     <p><a href="{% url 'avatar_change' %}" class="w3-bar-item w3-button">Change your avatar</a></p>
-
+    <p><a href="{% url 'password' %}" class="w3-bar-item w3-button">Change your password</a></p>
+	<p><a href="{% url 'settings' %}" class="w3-bar-item w3-button">Settings</a></p>
+	
   {% else %}
   <li><a href="{% url 'register' %}" class="w3-bar-item w3-button">Register</a></li>
   <li><a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a></li>
-  </div>
-</div>
 {% endif %}
 
 </div>
 </nav>
 
-<div class="w3-main" style="margin-right:200px">
-    <div class="w3-white">
-        <button class="w3-button w3-purple w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
-            <div class="w3-container">
-            <img src="{% static 'images/logo.png' %}" alt="logo" style="width:200px;height:75px;"/>
-            <a href="{% url 'index' %}"><img src="{% static 'images/button-home.png' %}" alt="index" style="width:128px;height:64px;text-decoration:underline-on-hover"></a></h></li>
-            <a href="{% url 'about' %}"><img src="{% static 'images/button-about.png' %}" alt="index" style="width:128px;height:64px"></a>
-            <a href="{% url 'artists' %}"><img src="{% static 'images/button-artists.png' %}" alt="index" style="width:128px;height:64px"></a>
-            <a href="{% url 'venues' %}"><img src="{% static 'images/button-venues.png' %}" alt="index" style="width:128px;height:64px;"></a>
-            <a href="{% url 'events' %}"><img src="{% static 'images/button-events.png' %}" alt="index" style="width:128px;height:64px"></a>
-    </div>
+<div class="w3-container">
+      <img src="{% static 'images/logo.png' %}" alt="logo" style="width:200px;height:75px;"/>
+        <a href="{% url 'index' %}"><img src="{% static 'images/button-home.png' %}" alt="index" style="width:128px;height:64px;text-decoration:underline-on-hover"></a></h></li>
+        <a href="{% url 'about' %}"><img src="{% static 'images/button-about.png' %}" alt="index" style="width:128px;height:64px"></a>
+        <a href="{% url 'artists' %}"><img src="{% static 'images/button-artists.png' %}" alt="index" style="width:128px;height:64px"></a>
+        <a href="{% url 'venues' %}"><img src="{% static 'images/button-venues.png' %}" alt="index" style="width:128px;height:64px;"></a>
+        <a href="{% url 'events' %}"><img src="{% static 'images/button-events.png' %}" alt="index" style="width:128px;height:64px"></a>
 </div>
 
 </head>
