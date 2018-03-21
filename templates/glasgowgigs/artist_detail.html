@@ -6,7 +6,7 @@
 
  <div class="w3-row">
   <div class="w3-threequarter">
-      <img src={{artist.photo.url}} alt={{artist.name}} style="width:800px;height:520px"></br>
+      <img src={{artist.photo.url}} alt={{artist.name}} width="100%"></br>
     <p>{{ artist.info }}</p></div>
 
    <p><strong>Genre:</strong>{{artist.genre}}</p>
@@ -21,7 +21,18 @@
 
   <div style="margin-left:20px;margin-top:20px">
     <h4>Upcoming Events in Glasgow</h4>
+    {% for artist in artist_list %}
+        {% for artist.name in artist_list %}
+            {% if artist.name and events.name %}
+                <p>This artist has an upcoming event.</p>
+            {% else %}
+        <p>This artist has no upcoming events in Glasgow.</p>
+        {% endif %}
+    {% endfor %}
+    {% endfor %}
   </div>
+
+
 
    </div>
 {% endblock %}

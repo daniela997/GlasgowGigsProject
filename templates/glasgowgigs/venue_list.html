@@ -1,10 +1,10 @@
 {% extends "glasgowgigs/base.html" %}
 
 {% block content %}
-    <h1>Venues on GlasgowGigs</h1>
+    <div class="w3-container w3-padding-30" id="projects">
+    <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">Venues on GlasgowGigs</font></h1>
 
     {% if venue_list %}
-
       {% for venue in venue_list %}
 		<div class="gallery">
 		  <a target="_blank" href="{{ venue.get_absolute_url }}">
