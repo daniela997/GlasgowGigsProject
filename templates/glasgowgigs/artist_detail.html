@@ -1,9 +1,17 @@
 {% extends "glasgowgigs/base.html" %}
 {% load staticfiles %}
 {% block content %}
-  <h1>{{ artist.name }}</h1>
+<div class="w3-container w3-padding-30" id="projects">
+    <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{artist.name}}</font></h1>  </div>
 
-  <p><strong>Social Media Links:</strong></p>
+ <div class="w3-row">
+  <div class="w3-threequarter">
+      <img src={{artist.photo.url}} alt={{artist.name}} style="width:800px;height:520px"></br>
+    <p>{{ artist.info }}</p></div>
+
+   <p><strong>Genre:</strong>{{artist.genre}}</p>
+
+    <p><strong>Social Media Links:</strong></p>
   <p><a href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.soundcloud}}><img src="{% static "images/soundcloud-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
@@ -11,11 +19,9 @@
   <a href={{artist.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
 
 
-<img src={{artist.photo.url}} alt={{artist.name}} /></br>
-  <p>{{ artist.info }}</p>
-  <p><strong>Genre:</strong>{{artist.genre}}</p>  
-
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Events</h4>
+    <h4>Upcoming Events in Glasgow</h4>
   </div>
+
+   </div>
 {% endblock %}
