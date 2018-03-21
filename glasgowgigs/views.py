@@ -45,9 +45,14 @@ def venues(request):
     context_dict = {}
     return render(request, 'glasgowgigs/venue.html', context=context_dict)
 
+class IndexView(generic.ListView):
+    # Define the template to be used
+    template_name = 'glasgowgigs/index.html'
 
 class ArtistListView(generic.ListView):
+    # Define model to be used
     model = Artist
+    template_name = 'glasgowgigs/artist_list.html'
 
 class VenueListView(generic.ListView):
     model = Venue
