@@ -21,6 +21,22 @@
 
   <div style="margin-left:20px;margin-top:20px">
     <h4>Upcoming Events in Glasgow</h4>
+    {% if event_list %}
+
+      {% for event in event_list %}
+		{% if artist.name in event.name %}
+		<div class="gallery">
+		  <a target="_blank" href="{{ event.get_absolute_url }}">
+			<div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ event.name }}"></div>
+		  </a>
+		  <div class="desc">{{ event.name }}</div>
+		</div>
+		{% endif %} 
+      {% endfor %}
+
+    {% else %}
+      <p>There are no events.</p>
+    {% endif %} 
   </div>
 
    </div>
