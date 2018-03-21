@@ -25,7 +25,7 @@
         width: 50%;
        }
     </style>
-
+	{% if venue.latitude and venue.longitude %}
     <h3>Location: </h3>
     <div id="map"></div>
     <script>
@@ -44,5 +44,5 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARbWl1n1ErFh0xCa_HHVtPC642A2iDH4Y&callback=initMap">
     </script>
-  
+    {% endif %}
 {% endblock %}

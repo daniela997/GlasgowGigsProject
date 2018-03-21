@@ -1,9 +1,10 @@
 from django.contrib import admin
 from glasgowgigs.models import Artist, Venue, Event
 from glasgowgigs.models import UserProfile
+from embed_video.admin import AdminVideoMixin
 
 # Define the artist class
-class ArtistAdmin(admin.ModelAdmin):
+class ArtistAdmin(AdminVideoMixin, admin.ModelAdmin):
     list_display = ('name', 'likes', 'views', 'genre')
     list_filter = ('likes', 'genre')
 
@@ -39,4 +40,6 @@ admin.site.register(Event, EventAdmin)
 
 #Register 
 admin.site.register(UserProfile)
+
+
 

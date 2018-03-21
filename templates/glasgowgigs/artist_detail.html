@@ -1,5 +1,6 @@
 {% extends "glasgowgigs/base.html" %}
 {% load staticfiles %}
+{% load embed_video_tags %}
 {% block content %}
 <div class="w3-container w3-padding-30" id="projects">
     <h1 class="w3-border-bottom w3-border-purple w3-padding-16"><font color="black">{{artist.name}}</font></h1>  </div>
@@ -18,6 +19,8 @@
   <a href={{artist.twitter}}><img src="{% static "images/twitter-icon.png" %}" alt="index" style="width:48px;height:48px"></a>
   <a href={{artist.facebook}}><img src="{% static "images/facebook-icon.png" %}" alt="index" style="width:48px;height:48px"></a></p>
 
+
+	{% video artist.video 'small' %}
 
   <div style="margin-left:20px;margin-top:20px">
     <h4>Upcoming Events in Glasgow</h4>
