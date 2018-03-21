@@ -39,7 +39,9 @@
 	<p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p>
     <p><a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a></p>
     <p><a href="{% url 'avatar_change' %}" class="w3-bar-item w3-button">Change your avatar</a></p>
-
+    <p><a href="{% url 'password' %}" class="w3-bar-item w3-button">Change your password</a></p>
+	<p><a href="{% url 'settings' %}" class="w3-bar-item w3-button">Settings</a></p>
+	
   {% else %}
   <li><a href="{% url 'register' %}" class="w3-bar-item w3-button">Register</a></li>
   <li><a href="{% url 'login' %}" class="w3-bar-item w3-button">Login</a></li>
