@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'glasgowgigs',
     'social_django',
     'avatar',
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +84,13 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
 
     'django.contrib.auth.backends.ModelBackend',
+)
+
+EMBED_VIDEO_BACKENDS = (
+    'embed_video.backends.YoutubeBackend',
+    'embed_video.backends.VimeoBackend',
+    'embed_video.backends.SoundCloudBackend',
+    'my_app.backends.CustomBackend',
 )
 
 STATICFILES_DIRS = [STATIC_DIR, ]

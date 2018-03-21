@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.db.models.signals import post_save
 from social_core.backends.facebook import FacebookOAuth2
 from social_core.backends.twitter import TwitterOAuth
+from embed_video.fields import EmbedVideoField
 
 
 class Artist(models.Model):
@@ -20,6 +21,7 @@ class Artist(models.Model):
     twitter = models.URLField(blank=True)
     info = models.TextField()
     photo = models.ImageField(upload_to='images/artists/', blank=True)
+    video = EmbedVideoField(blank=True)
 
 
     def save(self, *args, **kwargs):
@@ -40,6 +42,8 @@ class Venue(models.Model):
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
     photo = models.ImageField(upload_to='images/venues/', blank=True)
+    latitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

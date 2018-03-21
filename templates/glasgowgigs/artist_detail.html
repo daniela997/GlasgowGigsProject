@@ -1,5 +1,6 @@
 {% extends "glasgowgigs/base.html" %}
 {% load staticfiles %}
+{% load embed_video_tags %}
 {% block content %}
 
 <div class="w3-container w3-padding-30" id="projects">
@@ -9,6 +10,11 @@
     <div class="w3-threequarter">
         <img src={{artist.photo.url}} alt={{artist.name}} style="width:800px;height:520px"></br>
         <p>{{ artist.info }}</p></div>
+
+    <div class="w3-row">
+  <div class="w3-threequarter">
+      <img src={{artist.photo.url}} alt={{artist.name}} width="100%"></br>
+    <p>{{ artist.info }}</p></div>
 
     <p><strong>Genre: </strong>{{artist.genre}}</p>
 
@@ -26,4 +32,13 @@
 
 </div>
 
+	{% video artist.video 'small' %}
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Upcoming Events in Glasgow</h4>
+  </div>
+
+
+
+</div>
 {% endblock %}
