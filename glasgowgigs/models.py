@@ -40,8 +40,8 @@ class Venue(models.Model):
     likes = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
     photo = models.ImageField(upload_to='images/venues/', blank=True)
-    latitude = models.CharField(max_length=128, blank=True)
-    longitude = models.CharField(max_length=128, blank=True)
+    latitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True)
+    longitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
