@@ -1,3 +1,7 @@
+# To Run the test:
+# python manage.py test
+# Clear population script first
+
 from django.test import TestCase
 from glasgowgigs.models import Artist
 from django.test import Client
