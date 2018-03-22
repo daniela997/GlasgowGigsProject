@@ -37,14 +37,6 @@ def about(request):
     context_dict = {}
     return render(request, 'glasgowgigs/about.html', context=context_dict)
 
-def artists(request):
-    context_dict = {}
-    return render(request, 'glasgowgigs/artists.html', context=context_dict)
-
-def venues(request):
-    context_dict = {}
-    return render(request, 'glasgowgigs/venue.html', context=context_dict)
-
 class IndexView(generic.ListView):
     # Define the template to be used
     template_name = 'glasgowgigs/index.html'
@@ -56,9 +48,13 @@ class ArtistListView(generic.ListView):
 
 class VenueListView(generic.ListView):
     model = Venue
+    template_name = 'glasgowgigs/venue_list.html'
+
 
 class EventListView(generic.ListView):
     model = Event
+    template_name = 'glasgowgigs/event_list.html'
+
     
 class ArtistDetailView(generic.DetailView):
     model = Artist
@@ -174,4 +170,19 @@ def restricted(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+
+@login_required
+def like_venue(request):
+    if request.method == 'GET':
+		
+        venuename = request.GET['venue']
+    likes = 0
+    if venuename:
+        venue = Venue.objects.get(name=venuename)
+        if venue:
+            likes = venue.likes + 1
+            venue.likes = likes
+            venue.save()
+    return HttpResponse(likes)
 

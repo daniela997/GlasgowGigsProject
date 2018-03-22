@@ -18,6 +18,11 @@
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
     <div align="center"><h4>Events</h4></div>
+    <div> <strong id="like_count">{{ venue.likes }}</strong> like this venue! 
+    {% if user.is_authenticated %} 
+		<button id="likes" data-venue="{{ venue.name }}" class="btn btn-primary btn-sm" type="button"><i class="fa fa-heart-o" aria-hidden="true"></i> Like </button> 
+	{% endif %} 
+	</div>
   </div>
 	<style>
       #map {

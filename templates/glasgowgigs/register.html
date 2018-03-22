@@ -10,8 +10,7 @@
 <a href="{% url 'index' %}">Return to Home.</a><br />
 {% else %}
 <p><strong>Register Here!</strong></p><br />
-<form id="user_form" method="post" action="{% url 'register' %}"
-enctype="multipart/form-data"></form>
+<form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
 
 {% csrf_token %}
 <!-- Display each form -->
@@ -21,6 +20,7 @@ enctype="multipart/form-data"></form>
 
 <!-- Provide a button to click to submit the form. -->
 <input type="submit" name="submit" value="Register" />
+</form>
 </div>
 {% endif %}
 {% endblock %}
