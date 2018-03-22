@@ -44,6 +44,10 @@ class Venue(models.Model):
     photo = models.ImageField(upload_to='images/venues/', blank=True)
     latitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True, null=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=7, blank=True, null=True)
+    info = models.TextField(blank=True)
+    instagram = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
+    facebook = models.URLField(blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)

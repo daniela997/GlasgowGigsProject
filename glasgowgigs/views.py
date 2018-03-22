@@ -11,6 +11,7 @@ from social_django.models import UserSocialAuth
 from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeForm
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
+from django.views.generic.list import ListView
 
 
 def index(request):
@@ -32,6 +33,8 @@ def index(request):
         'glasgowgigs/index.html',
         context={'num_artists':num_artists,'num_venues':num_venues,'num_events':num_events},
     )
+
+    
 
 def about(request):
     context_dict = {}
