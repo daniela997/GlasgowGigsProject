@@ -9,6 +9,8 @@ from glasgowgigs.models import Artist, Venue, Event
 import datetime
 from django.core.files.images import ImageFile
 from embed_video.backends import detect_backend
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
+
 
 
 
