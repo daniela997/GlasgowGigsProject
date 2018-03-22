@@ -4,7 +4,7 @@
 {% load avatar_tags %}
 
 <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -60,8 +60,8 @@
     </ul>
 </nav>
 
-<!--Header-->
 
+<!--Header-->
 <div class="w3-container">
 		<img src="{% static 'images/logo.png' %}" alt="logo" style="width:200px;height:75px;"/>
         <a href="{% url 'index' %}"><img src="{% static 'images/button-home.png' %}" alt="index" style="width:128px;height:64px;text-decoration:underline-on-hover"></a></h></li>
@@ -75,6 +75,12 @@
       <div class="col-sm-10">
       {% block content %}{% endblock %}
       </div>
+
+	<!--Particles-->
+    <div id="particles-js"></div>
+    <script type="text/javascript" src={% static 'js/particles.js' %}></script>
+    <script type="text/javascript" src={% static 'js/app.js' %}></script>
+
 </body>
 </html>  
 
