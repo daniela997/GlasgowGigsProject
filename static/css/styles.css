@@ -1,14 +1,9 @@
-h1 {
+h1, h2 {
     color: #B40486;
-    font-family: Verdana;
+    font-family: "Verdana";
     text-align: center;
 }
 
-h2 {
-    color: #B40486;
-    font-family: Verdana;
-    text-align: center;
-}
 
 
 #indexPage {
