@@ -11,17 +11,19 @@ body {
 
 
 #particles-js {
-  position: absolute;
+  position: static;
   width: 100%;
   height: 100%;
-  background-color: rgba(50, 50, 50, 0.25);
+  background-color: rgba(255, 255, 255, 0.25);
   background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
 }
 
-
+.w3-container#topbar {
+    background-color: rgba(180, 4, 134, 0.19);
+}
 
 
 p {
