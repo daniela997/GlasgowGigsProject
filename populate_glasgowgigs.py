@@ -1,3 +1,6 @@
+# coding=utf-8
+# To Run: populate populate_glasgowgigs.py
+
 import os, sys
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 import django

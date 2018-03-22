@@ -6,6 +6,7 @@ from django.test import TestCase
 from glasgowgigs.models import Artist
 from django.test import Client
 
+# Tests in case of no population script
 class ArtistTestCase(TestCase):
 
     def setUp(self):
@@ -20,3 +21,5 @@ class ArtistTestCase(TestCase):
         response.status_code
         print("content", response.content)
         print("status_code", response.status_code)
+
+# Test if there is no video
