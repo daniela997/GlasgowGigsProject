@@ -2,13 +2,14 @@
 # To Run: populate populate_glasgowgigs.py
 
 import os, sys
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 import django
 django.setup()
 from glasgowgigs.models import Artist, Venue, Event
 import datetime
 from django.core.files.images import ImageFile
 from embed_video.backends import detect_backend
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
+
 
 
 
