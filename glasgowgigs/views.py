@@ -74,6 +74,10 @@ class VenueDetailView(generic.DetailView):
 class EventDetailView(generic.DetailView):
     model = Event
 
+class UpcomingEventsView(generic.ListView):
+    model = Event
+    template_name = 'glasgowgigs/artist_detail'
+
 def register(request):
     registered = False
     if request.method == 'POST':

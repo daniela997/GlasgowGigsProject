@@ -34,6 +34,8 @@ urlpatterns = [
     url(r'^settings/password/$', views.password, name='password'),
     url(r'^$', views.ArtistListCarousel.as_view(), name='index'),
     url(r'^$', views.VenueListCarousel.as_view(), name='index'),
+    url(r'^artist/(?P<slug>[-\w]+)/$', views.UpcomingEventsView.as_view(), name='index'),
+
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -24,10 +24,15 @@
             <a href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
     {% if artist.video %}
-	<div align="center">{% video artist.video 'small' %}</div>
+	<div align="center">{% video artist.video 'tiny' %}</div>
     {% endif %}
         <div style="margin-left:20px;margin-top:20px">
             <h4>Upcoming Events in Glasgow</h4>
+            {% for event in event_list %}
+                {% if event.artist.name is artist.name %}
+                    <p>{{ event.name }}</p>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 </div>
