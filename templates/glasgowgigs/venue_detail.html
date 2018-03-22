@@ -8,22 +8,22 @@
  <div class="w3-row">
   <div class="w3-half">
       <img src={{venue.photo.url}} alt={{venue.name}} width="100%"></br>
-      <p>{{ venue.info }}</p></div>
+      <p>{{ venue.info }}</p>
       </div>
-<div class="w3-conatiner w3-rest">
-<p><strong>Social Media Links:</strong></p>
+    <div class="w3-conatiner w3-rest">
+        <p><strong>Social Media Links:</strong></p>
   
-{% if venue.instagram %}
-<p><a href={{venue.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-{% endif %}
+        {% if venue.instagram %}
+            <p><a href={{venue.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+        {% endif %}
 
-{% if venue.twitter %}
-  <a href={{venue.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-{% endif %}
+        {% if venue.twitter %}
+            <a href={{venue.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+        {% endif %}
 
-{% if venue.facebook %}
-  <a href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
-{% endif %}
+        {% if venue.facebook %}
+            <a href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
+        {% endif %}
 
   <p><strong>Location:</strong></p>
   <p>{{venue.address}}</p>
@@ -69,5 +69,5 @@
 </div>
 </div>
  </div>
-    </div>
+ </div>
 {% endblock %}
