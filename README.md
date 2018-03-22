@@ -17,4 +17,6 @@ Resources used:
 2. StackOverflow
 3. https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
 4. Bootstrap
-
+5. Twitter API
+6. Facebook API
+7. GoogleMaps API
