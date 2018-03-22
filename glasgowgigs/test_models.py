@@ -19,41 +19,41 @@ class ArtistTestCase(TestCase):
         c = Client()
         response = c.get('/artists', follow=True)
         response.status_code
-        print("content", response.content)
-        print("status_code", response.status_code)
+        print("Artist content", response.content)
+        print("Artist status_code", response.status_code)
 
 # Test if there is no video
 
 # Tests in case of no population script
-class VenuesTestCase(TestCase):
+class VenueTestCase(TestCase):
 
     def setUp(self):
         self.c = Client()
 
-    def test_venues_content_empty(self):
+    def test_venue_content_empty(self):
         self.assertEqual(True, True)
 
         c = Client()
         response = c.get('/artists', follow=True)
         response.status_code
-        print("content", response.content)
-        print("status_code", response.status_code)
+        print("Venue content", response.content)
+        print("Venue status_code", response.status_code)
         
         
 # Tests in case of no population script
-class EventsTestCase(TestCase):
+class EventTestCase(TestCase):
 
     def setUp(self):
         self.c = Client()
 
-    def test_events_content_empty(self):
+    def test_event_content_empty(self):
         self.assertEqual(True, True)
 
         c = Client()
         response = c.get('/artists', follow=True)
         response.status_code
-        print("content", response.content)
-        print("status_code", response.status_code)
+        print("Event content", response.content)
+        print("Event status_code", response.status_code)
         
         
         
