@@ -3,7 +3,10 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 200px;
-    height: auto;
+    height: 245px;
+    color: darkslategray;
+    font-family: Arial;
+    font-weight: bold;
 }
 
 div.gallery:hover {
