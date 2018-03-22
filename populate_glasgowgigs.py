@@ -178,16 +178,36 @@ def populate():
 
     events = {
         "Mogwai":
-        {"King Tut's Wah Wah Hut" : {"date": datetime.date(2018, 3, 22), "bookings": 112, "views": 180},
-         "Flying Duck" : {"date": datetime.date(2018, 3, 23), "bookings": 98, "views": 120}},
+            {"King Tut's Wah Wah Hut" : {"date": datetime.date(2018, 3, 22), "bookings": 112, "views": 180},
+             "Flying Duck" : {"date": datetime.date(2018, 3, 23), "bookings": 98, "views": 120}},
         "Shogun":
-        {"SWG3 Studio Warehouse" : {"date": datetime.date(2018, 4, 2), "bookings": 122, "views": 150},
-         "Flying Duck" : {"date": datetime.date(2018, 4, 4), "bookings": 93, "views": 122}},
+            {"SWG3 Studio Warehouse" : {"date": datetime.date(2018, 4, 2), "bookings": 122, "views": 150},
+             "Flying Duck" : {"date": datetime.date(2018, 6, 4), "bookings": 93, "views": 122}},
         "Belle & Sebastian":
-        {"King Tut's Wah Wah Hut" : {"date": datetime.date(2018, 4, 12), "bookings": 82, "views": 110},
-         "Flying Duck" : {"date": datetime.date(2018, 3, 31), "bookings": 98, "views": 131}}
-        }
-
+            {"King Tut's Wah Wah Hut" : {"date": datetime.date(2018, 8, 12), "bookings": 82, "views": 110},
+             "Flying Duck" : {"date": datetime.date(2018, 3, 31), "bookings": 98, "views": 131}},
+        "Franz Ferdinand":
+            {"O2 ABC" : {"date": datetime.date(2018, 3, 20), "bookings": 122, "views": 210},
+             "La Cheetah": {"date": datetime.date(2018, 7, 14), "bookings": 78, "views": 96,}},
+        "Snow Patrol":
+            {"Sub Club": {"date": datetime.date(2018, 8, 20), "bookings": 109, "views": 140},
+             "Broadcast": {"date": datetime.date(2018, 4, 16), "bookings": 23, "views": 57},
+             "The Art School": {"date": datetime.date(2018, 5, 30), "bookings": 45, "views": 86}},
+        "The Jesus and Mary Chain":
+             {"Centre of Contemporary Arts": {"date": datetime.date(2018, 4, 20), "bookings": 78, "views": 105},
+              "Flying Duck": {"date": datetime.date(2018, 3, 15), "bookings": 138, "views": 204}},
+        "Rustie":
+            {"SSE Hydro": {"date": datetime.date(2018, 5, 23), "bookings": 305, "views": 432},
+             "Barrowland Ballroom": {"date": datetime.date(2018, 5, 5), "bookings": 139, "views": 177},
+             "King Tut's Wah Wah Hut": {"date": datetime.date(2018, 6, 20), "bookings": 166, "views": 189}},
+        "Boards of Canada":
+            {"Centre of Contemporary Arts": {"date": datetime.date(2018, 7, 12), "bookings": 47, "views": 66},
+             "Flying Duck": {"date": datetime.date(2018, 5, 24), "bookings": 102, "views": 154}},
+        "Kode9":
+            {"O2 ABCs": {"date": datetime.date(2018, 5, 15), "bookings": 76, "views": 116}},
+        "Calvin Harris":
+            {"SSE Hydro": {"date": datetime.date(2018, 8, 20), "bookings": 1367, "views": 983}},
+    }
 
     for v in venues:
         add_venue(v["name"], v["address"], v["likes"], v["views"], v["photo"], v["latitude"], v["longitude"], v["info"], v["instagram"], v["twitter"], v["facebook"])
