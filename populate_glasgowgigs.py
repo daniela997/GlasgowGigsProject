@@ -2,8 +2,8 @@
 # To Run: populate populate_glasgowgigs.py
 
 import os, sys
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 django.setup()
 from glasgowgigs.models import Artist, Venue, Event
 import datetime
@@ -14,8 +14,8 @@ from embed_video.backends import detect_backend
 
 
 def populate():
-    
-    
+
+
     artists = [
         {"name": "Shogun", "genre": "hip-hop", "views": 20, "likes": 15,
          "youtube": "https://www.youtube.com/channel/UC3IizCaGplXl7CWw1hKzHYg",
@@ -211,7 +211,7 @@ def populate():
 
     for v in venues:
         add_venue(v["name"], v["address"], v["likes"], v["views"], v["photo"], v["latitude"], v["longitude"], v["info"], v["instagram"], v["twitter"], v["facebook"])
-		
+
     for a in artists:
         add_artist(a["name"], a["genre"], a["likes"], a["views"], a["youtube"], a["instagram"], a["soundcloud"], a["twitter"], a["facebook"], a["info"], a["photo"], a["video"])
         if a["name"] in events.keys():
@@ -234,8 +234,8 @@ def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, twitte
     a.twitter = twitter
     a.facebook = facebook
     a.info = info
-    a.photo = ImageFile(open(photo, "rb"))  
-    a.video = video    
+    a.photo = ImageFile(open(photo, "rb"))
+    a.video = video
     a.save()
     return a
 
@@ -245,7 +245,7 @@ def add_venue(name, address, views, likes, photo, latitude, longitude, info, ins
     v.address = address
     v.views = views
     v.likes = likes
-    v.photo = ImageFile(open(photo, "rb"))   
+    v.photo = ImageFile(open(photo, "rb"))
     v.latitude = latitude
     v.longitude = longitude
     v.info = info

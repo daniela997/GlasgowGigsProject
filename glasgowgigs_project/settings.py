@@ -19,7 +19,6 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -29,7 +28,7 @@ SECRET_KEY = 'fsal-b&vqinn_kx@)uq(znl7m3uje*a65aalu_(c=5hj3bku7t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['2262058i.pythonanywhere.com']
 
 
 # Application definition
@@ -155,6 +154,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+TEMPLATE_ROOT = TEMPLATE_DIR
+
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'index'
@@ -163,8 +165,8 @@ LOGIN_REDIRECT_URL = 'index'
 SOCIAL_AUTH_TWITTER_KEY = 'CKhr7VkgOaI5ZWFgxJ94UKe5Z'
 SOCIAL_AUTH_TWITTER_SECRET = 'dT4FIvfNNWQ0etdJiv2nEU1V5z8ffESyaV0RWu4zosobES7aJq'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '230596227513786'  
-SOCIAL_AUTH_FACEBOOK_SECRET = '56131aab4f5126bc981b5fa1cae303b5' 
+SOCIAL_AUTH_FACEBOOK_KEY = '230596227513786'
+SOCIAL_AUTH_FACEBOOK_SECRET = '56131aab4f5126bc981b5fa1cae303b5'
 
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
