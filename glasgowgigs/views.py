@@ -174,12 +174,12 @@ def user_logout(request):
 
 @login_required
 def like_venue(request):
+    venue_id = None
     if request.method == 'GET':
-		
-        venuename = request.GET['venue']
+        venue_id = request.GET['venue_id']
     likes = 0
-    if venuename:
-        venue = Venue.objects.get(name=venuename)
+    if venue_id:
+        venue = Venue.objects.get(id=int(venue_id))
         if venue:
             likes = venue.likes + 1
             venue.likes = likes
