@@ -23,16 +23,20 @@
 
 <div class='w3-container'>
     <div class='w3-row'>
-        <div class='w3-third'>
+        <div class='w3-half'>
             <h1>Artists</h1>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                {% for artists in artists_list %}
+                {% for artist in artist_list %}
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src={{ artists.photo }} alt={{ artists.name }}>
+                {% if forloop.first %}
+                    <div class="active item">
+                {% else %}
+                    <div class="item">
+                {% endif %}
+                        <img src={{ artist.photo.url }} alt={{ artist.name }}>
                         <div class="carousel-caption">
-                            <h3>{{ artists.name }}</h3>
+                            <h3>{{ artist.name }}</h3>
                         </div>
                     </div>
                 </div>
@@ -50,43 +54,16 @@
             </div>
         </div>
 
-        <div class="w3-third">
+        <div class="w3-half">
             <h1>Venues</h1>
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                {% for venues in venues_list %}
+                {% for venue in venue_list %}
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src={{ venues.photo }} alt={{ venues.name }}>
+                        <img src={{ venue.photo }} alt={{ venue.name }}>
                         <div class="carousel-caption">
-                            <h3>{{ venues.name }}</h3>
-                        </div>
-                    </div>
-                </div>
-
-                {% endfor %}
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="w3-third">
-            <h1>Events</h1>
-            <div id='myCarousel' class="carousel slide" data-ride="carousel">
-                {% for events in events_list %}
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src={{ events.photo }} alt={{ events.name }}>
-                        <div class="carousel-caption">
-                            <h3>{{ events.name }}</h3>
+                            <h3>{{ venue.name }}</h3>
                         </div>
                     </div>
                 </div>

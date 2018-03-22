@@ -49,9 +49,17 @@ class ArtistListView(generic.ListView):
     model = Artist
     template_name = 'glasgowgigs/artist_list.html'
 
+class ArtistListCarousel(generic.ListView):
+    model = Artist
+    template_name = 'glasgowgigs/index.html'
+
 class VenueListView(generic.ListView):
     model = Venue
     template_name = 'glasgowgigs/venue_list.html'
+
+class VenueListCarousel(generic.ListView):
+    model = Venue
+    template_name = 'glasgowgigs/index.html'
 
 class EventListView(generic.ListView):
     model = Event
