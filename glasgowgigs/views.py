@@ -50,12 +50,10 @@ class VenueListView(generic.ListView):
     model = Venue
     template_name = 'glasgowgigs/venue_list.html'
 
-
 class EventListView(generic.ListView):
     model = Event
     template_name = 'glasgowgigs/event_list.html'
 
-    
 class ArtistDetailView(generic.DetailView):
     model = Artist
 
@@ -185,4 +183,5 @@ def like_venue(request):
             venue.likes = likes
             venue.save()
     return HttpResponse(likes)
+
 
