@@ -3,7 +3,11 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 200px;
-    height: auto;
+    height: 250px;
+    color: darkslategray;
+    font-family: Arial;
+    font-weight: bold;
+    background-color: rgba(179, 179, 179, 0.29);
 }
 
 div.gallery:hover {
@@ -11,7 +15,7 @@ div.gallery:hover {
 }
 
 div.desc {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -21,6 +25,7 @@ div.thumbnail {
   height: 150px;
   overflow: hidden;
 }
+
 div.thumbnail img {
   position: absolute;
   left: 50%;
