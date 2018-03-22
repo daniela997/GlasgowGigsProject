@@ -16,89 +16,130 @@
             <li>{{ num_events }} <strong>upcoming gigs</strong></li>
         </ul>
     </div>
-</body>
 
-<div class="w3-container>
- <div class="w3-row">
-  <div class="w3-third">
-      <h1>Artists</h1>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      {% for artists in artists_list %}
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src={{ artists.photo }} alt={{ artists.name }}>
-      <div class="carousel-caption">
-        <h3>{{ artists.name }}</h3>
-      </div>
-    </div>
-  </div>
+<div class="w3-container">
+	<div class="w3-row">
+		<div class="w3-third">
+			<h1>Artists</h1>
+		
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
 
-    {% endfor %}
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-      </div>
-      
-    <div class="w3-third">
-    <h1>Venues</h1>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      {% for venues in venues_list %}
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src={{ venues.photo }} alt={{ venues.name }}>
-      <div class="carousel-caption">
-        <h3>{{ venues.name }}</h3>
-      </div>
-    </div>
-  </div>
-   {% endfor %}
-   <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    </div>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				{% for artist in artists_list %}
+				{% if forloop.counter == 1 %}
+				<div class="item active">
+				{% else %}
+				<div class="item">
+				{% endif %}
+					<img src="{{ artist.photo.url }}" alt="{{ artist.name }}">
+			  <div class="carousel-caption">
+				<p>{{ artist.name }}</p>
+			  </div>
+				</div>
+				{% endfor %}
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+		
+		
+		
+		<div class="w3-third">
+			<h1>Venues</h1>
+		
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				{% for venue in venues_list %}
+				{% if forloop.counter == 1 %}
+				<div class="item active">
+				{% else %}
+				<div class="item">
+				{% endif %}
+					<img src="{{ venue.photo.url }}" alt="{{ venue.name }}">
+			  <div class="carousel-caption">
+				<p>{{ venue.name }}</p>
+			  </div>
+				</div>
+				{% endfor %}
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
     
-<div class="w3-third">
-    <h1>Events</h1>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-      {% for events in events_list %}
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-      <img src={{ events.photo }} alt={{ events.name }}>
-      <div class="carousel-caption">
-        <h3>{{ events.name }}</h3>
-      </div>
-    </div>
-  </div>
-   {% endfor %}
-   <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color:purple"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-    </div>
+    
+		<div class="w3-third">
+			<h1>Events</h1>
+			
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				{% for event in events_list %}
+				{% if forloop.counter == 1 %}
+				<div class="item active">
+				{% else %}
+				<div class="item">
+				{% endif %}
+					<img src="{{ event.artist.photo.url }}" alt="{{ event.name }}">
+			  <div class="carousel-caption">
+				<p>{{ event.name }}</p>
+			  </div>
+				</div>
+				{% endfor %}
+				</div>
+
+				<!-- Left and right controls -->
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>		
 </div>
 {% endblock %}
 
-</html>
+
