@@ -204,7 +204,7 @@ def populate():
             {"Centre of Contemporary Arts": {"date": datetime.date(2018, 7, 12), "bookings": 47, "views": 66},
              "Flying Duck": {"date": datetime.date(2018, 5, 24), "bookings": 102, "views": 154}},
         "Kode9":
-            {"O2 ABCs": {"date": datetime.date(2018, 5, 15), "bookings": 76, "views": 116}},
+            {"O2 ABC": {"date": datetime.date(2018, 5, 15), "bookings": 76, "views": 116}},
         "Calvin Harris":
             {"SSE Hydro": {"date": datetime.date(2018, 8, 20), "bookings": 1367, "views": 983}},
     }
