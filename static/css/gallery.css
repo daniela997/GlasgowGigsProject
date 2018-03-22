@@ -7,6 +7,7 @@ div.gallery {
     color: darkslategray;
     font-family: Arial;
     font-weight: bold;
+    background-color: rgba(179, 179, 179, 0.29);
 }
 
 div.gallery:hover {
