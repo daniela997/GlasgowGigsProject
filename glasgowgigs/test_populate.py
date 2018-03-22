@@ -1,14 +1,14 @@
 from django.test import TestCase
-from glasgowgigs.models import Artist
+from populate_glasgowgigs import populate
 from django.test import Client
 
-class AnimalTestCase(TestCase):
+class ArtistTestCase(TestCase):
 
     def setUp(self):
         #Artist.objects.create()
         self.c = Client()
 
-    def test_animals_can_speak(self):
+    def test_artist_content_empty(self):
         self.assertEqual(True, True)
 
         c = Client()
