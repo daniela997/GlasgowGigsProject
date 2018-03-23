@@ -190,7 +190,7 @@ def populate():
              "Flying Duck" : {"date": datetime.date(2018, 3, 31), "bookings": 98, "views": 131}},
         "Franz Ferdinand":
             {"O2 ABC" : {"date": datetime.date(2018, 3, 20), "bookings": 122, "views": 210},
-             "La Cheetah": {"date": datetime.date(2018, 7, 14), "bookings": 78, "views": 96,}},
+             "La Cheetah": {"date": datetime.date(2018, 7, 14), "bookings": 78, "views": 96}},
         "Snow Patrol":
             {"Sub Club": {"date": datetime.date(2018, 8, 20), "bookings": 109, "views": 140},
              "Broadcast": {"date": datetime.date(2018, 4, 16), "bookings": 23, "views": 57},

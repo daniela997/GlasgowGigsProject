@@ -23,6 +23,13 @@
             <a href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
             <a href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
+    <div align="center">
+	<strong id="like_count">{{ artist.likes }}</strong> people like this venue! 
+	{% if user.is_authenticated %} 
+		<button id="likes" data-venueid="{{ artist.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
+	{% endif %} 
+    </div>
+    <br>
     {% if artist.video %}
 	<div align="center">{% video artist.video 'tiny' %}</div>
     {% endif %}
