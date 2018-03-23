@@ -14,7 +14,6 @@ body {
     background-color: white;
 }
 
-
 #particles-js {
   position: absolute;
   width: 100%;
@@ -56,6 +55,7 @@ p {
     font-family: Verdana;
     text-align: center;
 }
+
 
 .index-nav{
     font-family: Verdana;
@@ -120,5 +120,25 @@ nav ul { list-style-type: none; }
   border-top-right-radius: 50% 50%;
   border-bottom-right-radius: 50% 50%;
   border-bottom-left-radius: 50% 50%;
+}
+
+.search-container {
+    padding: 25px 350px 75px
+}
+
+.footer {
+    background: rgba(233, 233, 233, 0.19)
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(233, 233, 233, 0.19);
+    color: white;
+    text-align: center;
+    padding: 5px
+}
+
+footer.page-footer font-small grey pt-3 mt-4 {
+    padding: 10px
 }
 
