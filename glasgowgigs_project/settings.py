@@ -28,7 +28,7 @@ SECRET_KEY = 'fsal-b&vqinn_kx@)uq(znl7m3uje*a65aalu_(c=5hj3bku7t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['2262058i.pythonanywhere.com']
+ALLOWED_HOSTS = ['2262058i.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition

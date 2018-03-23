@@ -64,6 +64,8 @@ class VenueListCarousel(generic.ListView):
 class EventListView(generic.ListView):
     model = Event
     template_name = 'glasgowgigs/event_list.html'
+    ordering = ['date']
+
 
 class ArtistDetailView(generic.DetailView):
     model = Artist

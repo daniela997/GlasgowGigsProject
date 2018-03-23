@@ -87,7 +87,6 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
     bookings = models.ManyToManyField(Event, blank=True)
     favourite_artists = models.ManyToManyField(Artist, blank=True)
     favourite_venues = models.ManyToManyField(Venue, blank=True)
