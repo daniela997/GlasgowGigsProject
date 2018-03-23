@@ -4,6 +4,11 @@ h1, h2 {
     text-align: center;
 }
 
+h3 {
+    color: #b61924;
+    font-family: "Comic Sans MS";
+}
+
 
 body {
     background-color: white;

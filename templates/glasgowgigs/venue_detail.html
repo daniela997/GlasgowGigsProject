@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 <div class="w3-container w3-padding-30" id="projects">
-    <h1 class="w3-border-bottom w3-border-purple w3-padding-16">{{ venue.name }}</h1>  </div>
+    <h1 class="w3-border-bottom w3-border-grey w3-padding-16">{{ venue.name }}</h1>  </div>
 <div class="w3-container">
  <div class="w3-row">
   <div class="w3-half">
@@ -46,7 +46,7 @@
        }
     </style>
 	{% if venue.latitude and venue.longitude %}
-    <div align="center"><h3>Location: </h3>
+    <div align="center"><h3>Location: </h3></div>
     <div align="center"><div id="map"></div>
     <script>
       function initMap() {
