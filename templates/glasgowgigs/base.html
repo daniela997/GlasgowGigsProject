@@ -65,12 +65,13 @@
 
 
 <!--Header-->
-<div class="w3-container" div id="topbar">
-	<img src="{% static 'images/logo.png' %}" alt="logo" style="width:190px;height:75px;"/>
-        <a href="{% url 'index' %}"><img src="{% static 'images/button-home.png' %}" alt="index" style="width:128px;height:64px;text-decoration:underline-on-hover"></a></h></li>
-        <a href="{% url 'artists' %}"><img src="{% static 'images/button-artists.png' %}" alt="index" style="width:128px;height:64px"></a>
-        <a href="{% url 'venues' %}"><img src="{% static 'images/button-venues.png' %}" alt="index" style="width:128px;height:64px;"></a>
-        <a href="{% url 'events' %}"><img src="{% static 'images/button-events.png' %}" alt="index" style="width:128px;height:64px"></a>
+<div class="w3-container" div id="topbar"
+     style="color:#000000; font-family:'Arial Narrow';font-size:25px;background-color:transparent;">
+	<img src="{% static 'images/logo.png' %}" alt="logo" style="width:180px;height:80px;"/>
+    <a href="{% url 'index' %}" class="w3-button">HOME</a>
+    <a href="{% url 'artists' %}" class="w3-button">ARTISTS</a>
+    <a href="{% url 'venues' %}" class="w3-button">VENUES</a>
+    <a href="{% url 'events' %}" class="w3-button">EVENTS</a>
 </div>
 
 
