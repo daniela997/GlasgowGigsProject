@@ -1,12 +1,16 @@
 h1, h2 {
     color: #b61924;
-    font-family: "Comic Sans MS";
+    font-family: "Verdana";
     text-align: center;
 }
 
 h3 {
     color: #b61924;
-    font-family: "Comic Sans MS";
+    font-family: "Verdana";
+}
+
+h4 {
+    color: #FFFFFF;
 }
 
 
