@@ -26,12 +26,13 @@
 </div>
 
 
-<div class='w3-container'>
+<div class='container'>
 
     <div class='w3-row'>
 
         <div class='w3-half'>
-            <h1>Artists</h1>
+
+            <h2>Artists</h2>
             <div id="ArtistCarousel" class="carousel slide" data-ride="carousel">
                 {% for artist in top_artists %}
                 <!-- Wrapper for slides -->
@@ -43,7 +44,7 @@
                 {% endif %}
                         <img src="{{ artist.photo.url }}" alt="{{ artist.name }}">
                         <div class="carousel-caption">
-                            <h3>{{ artist.name }}</h3>
+                            <a href="{{ artist.get_absolute_url }}" class="btn btn-default btn-md" style="color:white;background-color:rgba(0,0,0,0.5);">{{ artist.name }}</a>
                         </div>
                     </div>
                 </div>
@@ -61,8 +62,8 @@
                 </div>
             </div>
 
-        <div class="w3-half">
-            <h1>Venues</h1>
+            <div class="w3-half">
+            <h2>Venues</h2>
             <div id="VenueCarousel" class="carousel slide" data-ride="carousel">
                 {% for venue in top_venues %}
                 <!-- Wrapper for slides -->
@@ -74,7 +75,7 @@
                 {% endif %}
                         <img src="{{ venue.photo.url }}" alt="{{ venue.name }}">
                         <div class="carousel-caption">
-                            <h3>{{ venue.name }}</h3>
+                            <a href="{{ venue.get_absolute_url }}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5);">{{ venue.name }}</a>
                         </div>
                     </div>
                 </div>
