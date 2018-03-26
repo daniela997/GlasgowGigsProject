@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from .models import Artist, Venue, Event
+from glasgowgigs.models import Artist, Venue, Event
 from django.views import generic
 from glasgowgigs.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
@@ -15,23 +15,20 @@ from django.views.generic.list import ListView
 
 
 def index(request):
-    #context_dict = {'boldmessage': "Crunch, creamy, cookie, candy, cupcake!"}
-    #return render(request, 'glasgowgigs/index.html', context=context_dict)
-
     # stats
     num_artists=Artist.objects.all().count()
     num_venues=Venue.objects.all().count()
     num_events=Event.objects.all().count()
 
-    #events during the current month
-    #coming_soon_events=Event.objects.filter(date.month=today.month).count()
+    artist_top5 = Artist.objects.order_by('-likes')[:5]
+    venue_top5 = Venue.objects.order_by('-likes')[:5]
     
     
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
         'glasgowgigs/index.html',
-        context={'num_artists':num_artists,'num_venues':num_venues,'num_events':num_events},
+        context={'num_artists':num_artists,'num_venues':num_venues,'num_events':num_events,'top_artists':artist_top5, 'top_venues':venue_top5},
     )
 
     
@@ -48,6 +45,7 @@ class ArtistListView(generic.ListView):
     # Define model to be used
     model = Artist
     template_name = 'glasgowgigs/artist_list.html'
+    ordering = ['-likes']
 
 class ArtistListCarousel(generic.ListView):
     model = Artist
@@ -56,6 +54,7 @@ class ArtistListCarousel(generic.ListView):
 class VenueListView(generic.ListView):
     model = Venue
     template_name = 'glasgowgigs/venue_list.html'
+    ordering = ['-likes']
 
 class VenueListCarousel(generic.ListView):
     model = Venue
