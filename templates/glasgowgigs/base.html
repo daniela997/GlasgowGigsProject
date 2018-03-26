@@ -29,15 +29,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Bootstrap core CSS -->
-    <!-- Should take away cause old version --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Should take away cause old version, only works for index slideshow --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous">
 
     <!--Styles-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-	<link rel="stylesheet" href="{% static 'css/gallery.css' %}">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
     	<!--Tab icon-->
 	<link rel="icon" href="{% static 'images/favicon.ico' %}">
@@ -55,18 +55,35 @@
 			<div id="particles-js">
 			<button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
 			<div class="centered">
+
 			{% if user.is_authenticated %}
-	
-			<p>Hello {{ user.username }}!</p>
-			<div align="center"><p>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</p></div>
-			<p><a href="{% url 'logout' %}" class="w3-bar-item w3-button">Logout</a></p>
-			<p><a href="{% url 'avatar_change' %}" class="w3-bar-item w3-button">Change your avatar</a></p>
-			<p><a href="{% url 'password' %}" class="w3-bar-item w3-button">Change your password</a></p>
-			<p><a href="{% url 'settings' %}" class="w3-bar-item w3-button">Settings</a></p>
+                <div align="center">
+                    <h4>Hello {{ user.username }}</h4>
+                    <h4>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</h4>
+                    </br>
+                    <a href="{% url 'settings' %}" class="btn btn-info btn-md ">Profile</a>
+                    </br>
+                    </br>
+                    <a href="{% url 'settings' %}" class="btn btn-info btn-md ">Settings</a>
+                    </br>
+                    </br>
+                    <a href="{% url 'avatar_change' %}" class="btn btn-info btn-md">Change Avatar</a>
+                    </br>
+                    </br>
+                    <a href="{% url 'password' %}" class="btn btn-info btn-md ">Change Password</a>
+                    </br>
+                    </br>
+                    <a href="{% url 'logout' %}" class="btn btn-info btn-md">Logout</a>
+                </div>
 	
 			{% else %}
-			  <li><a href="{% url 'register' %}" class="w3-bar-item w3-button"><b>Register</b></a></li>
-			  <li><a href="{% url 'login' %}" class="w3-bar-item w3-button"><b>Login</b></a></li>
+                <div class="non-log-btn" align="center">
+                    <a href="{% url 'login' %}" class="btn btn-info btn-md ">Login</a>
+                    </br>
+                    </br>
+                    <a href="{% url 'register' %}" class="btn btn-info btn-md ">Register</a>
+                </div>
+
 			{% endif %}
 			</div>
 			</div>
@@ -103,10 +120,10 @@
 
 
 <!--Footer-->
-<footer class="page-footer font-small grey pt-3 mt-4">
+<footer class="container-fluid page-footer font-small grey pt-3 mt-4">
 
     <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
+    <div class="text-center text-md-left">
         <div class="row">
 
             <!--First column-->
