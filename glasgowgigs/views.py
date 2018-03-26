@@ -157,6 +157,11 @@ def settings(request):
     })
 
 @login_required
+def profile(request):
+    context_dict = {}
+    return render(request, 'registration/profile.html', context=context_dict)
+
+@login_required
 def password(request):
     if request.user.has_usable_password():
         PasswordForm = PasswordChangeForm
