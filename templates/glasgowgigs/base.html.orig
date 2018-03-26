@@ -5,6 +5,7 @@
 
 
 <head>
+<<<<<<< HEAD
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -20,13 +21,18 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 	
-
+	<!--Scaling-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+=======
     <!--Required meta tags, scaling for devices-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> 75cfda751dcd543ae83a5a423124a4ab33fa7deb
 
     <!--Use the latest rendering engine-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>GlasgowGigs</title>
 
     <!-- Bootstrap core CSS -->
     <!-- Should take away cause old version --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -89,6 +95,9 @@
       <div class="col-sm-10">
       {% block content %}{% endblock %}
       </div>
+<<<<<<< HEAD
+      
+=======
 
 	<!--Particles-->
     <script type="text/javascript" src={% static 'js/particles.js' %}></script>
@@ -98,6 +107,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+>>>>>>> 75cfda751dcd543ae83a5a423124a4ab33fa7deb
 
 <div style="clear: both">
 
@@ -144,7 +154,7 @@
 <!--/.Footer-->
 </footer>
 </div>
-
+<<<<<<< HEAD
 	<!--Scripts-->
 	
 	<script src="{% static 'js/glasgowgigs-ajax.js' %}"></script>
@@ -160,6 +170,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+=======
 
     <!--Bootstrap JS: JQuery, Popper, Bootstrap in order-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -171,6 +182,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <!-- jQuery library -->
+    <script src="{% static 'js/glasgowgigs-ajax.js' %}"></script>
+>>>>>>> 75cfda751dcd543ae83a5a423124a4ab33fa7deb
 
 </body>
 </html>  
