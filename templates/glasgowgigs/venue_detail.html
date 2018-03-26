@@ -14,15 +14,15 @@
         <p><strong>Social Media Links:</strong></p>
         <div align="center">
         {% if venue.instagram %}
-            <p><a href={{venue.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <p><a target="_blank" href={{venue.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
         {% endif %}
 
         {% if venue.twitter %}
-            <a href={{venue.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{venue.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
         {% endif %}
 
         {% if venue.facebook %}
-            <a href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
+            <a target="_blank" href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
         {% endif %}
         </div>
   <p><strong>Location:</strong></p>

@@ -1,6 +1,7 @@
 {% extends "glasgowgigs/base.html" %}
 {% load staticfiles %}
 {% load embed_video_tags %}
+
 {% block content %}
 <div class="w3-container w3-padding-30" id="projects">
     <h1 class="w3-border-bottom w3-border-grey w3-padding-16">{{artist.name}}</h1>
@@ -17,11 +18,11 @@
 
     <div class='w3-container w3-rest'>
         <p><strong>Social Media Links:</strong></p>
-        <p><a href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a href={{artist.soundcloud}}><img src="{% static 'images/soundcloud-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
+        <p><a target="_blank" href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.soundcloud}}><img src="{% static 'images/soundcloud-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
     <div align="center">
 	<strong id="like_count">{{ artist.likes }}</strong> people like this venue! 
@@ -43,7 +44,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 {% endblock %}
 
