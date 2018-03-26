@@ -1,25 +1,10 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 {% load static %}
 {% load avatar_tags %}
 
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-            crossorigin="anonymous"></script>
-	
 
     <!--Required meta tags, scaling for devices-->
     <meta charset="utf-8">
@@ -28,20 +13,11 @@
     <!--Use the latest rendering engine-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Bootstrap core CSS -->
-    <!-- Should take away cause old version, only works for index slideshow --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous">
-
-    <!--Styles-->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
-
-    	<!--Tab icon-->
+	<!--Tab icon-->
 	<link rel="icon" href="{% static 'images/favicon.ico' %}">
-
+	
+	<!--Tab icon-->
+	<title>GlasgowGigs</title>
 </head>
 
 
@@ -102,14 +78,16 @@
     <a href="{% url 'events' %}" class="w3-button">EVENTS</a>
 </div>
 
-<div class="col-sm-10">
-    {% block content %}{% endblock %}
-</div>
+
+      <div class="col-sm-10">
+      {% block content %}{% endblock %}
+      </div>
+
+<div style="clear: both">
 
 
 <!--Footer-->
-<div style="clear: both">
-    <footer class="container-fluid page-footer font-small grey pt-3 mt-4">
+<footer class="container-fluid page-footer font-small grey pt-3 mt-4">
 
     <!--Footer Links-->
     <div class="text-center text-md-left">
@@ -136,39 +114,42 @@
                     </li>
                 </ul>
             </div>
-            <!--/.Second column-->
         </div>
     </div>
-    <!--/.Footer Links-->
 
     <!--Copyright-->
     <div class="footer">
           <p>© 2018 Copyright: GlasgowGigs</p>
     </div>
-    <!--/.Copyright-->
 
-<!--/.Footer-->
 </footer>
-</div>
+</div>	
 
-<!--Scripts-->
-<script src="{% static 'js/glasgowgigs-ajax.js' %}"></script>
-<script src="{% static 'js/artist-carousel.js' %}"></script>
+    <!--Styles-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
 
-<!--Particles-->
-<script type="text/javascript" src="{% static 'js/particles.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
-
-<!--Bootstrap JS: JQuery, Popper, Bootstrap in order-->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto|Open+Sans:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Bootstrap 4 Scripts -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	
+	<!--Scripts-->
+	
+	<script type="text/javascript" src={% static 'js/glasgowgigs-ajax.js' %}></script>
+	<script type="text/javascript" src={% static 'js/artist-carousel.js' %}></script>
+    <script type="text/javascript" src={% static 'js/particles.js' %}></script>
+    <script type="text/javascript" src={% static 'js/app.js' %}></script>
+    <script type="text/javascript" src={% static 'js/carousel.js' %}></script>
 
 </body>
-</html>
+</html>  
+
+
+

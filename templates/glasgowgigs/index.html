@@ -32,11 +32,11 @@
 
         <div class='w3-half'>
 
-            <h2>Artists</h2>
+            <h2>Top 5 Artists</h2>
             <div id="ArtistCarousel" class="carousel slide" data-ride="carousel">
-                {% for artist in top_artists %}
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+				{% for artist in top_artists %}
                 {% if forloop.first %}
                     <div class="active item">
                 {% else %}
@@ -47,9 +47,10 @@
                             <a href="{{ artist.get_absolute_url }}" class="btn btn-default btn-md" style="color:white;background-color:rgba(0,0,0,0.5);">{{ artist.name }}</a>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
 
-                {% endfor %}
+
                 <!-- Left and right controls -->
                 <a class="left carousel-control" href="#ArtistCarousel" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color:#b61924"></span>
@@ -63,11 +64,11 @@
             </div>
 
             <div class="w3-half">
-            <h2>Venues</h2>
-            <div id="VenueCarousel" class="carousel slide" data-ride="carousel">
-                {% for venue in top_venues %}
+            <h2>Top 5 Venues</h2>
+            <div id="venueCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
+				{% for venue in top_venues %}
                 {% if forloop.first %}
                     <div class="active item">
                 {% else %}
@@ -78,22 +79,23 @@
                             <a href="{{ venue.get_absolute_url }}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5);">{{ venue.name }}</a>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
 
-                {% endfor %}
+
                 <!-- Left and right controls -->
-                <a class="left carousel-control" href="#VenueCarousel" role="button" data-slide="prev">
+                <a class="left carousel-control" href="#venueCarousel" role="button" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true" style="color: #b61924"></span>
                     <span class="sr-only">Previous</span>
                 </a>
-                <a class="right carousel-control" href="#VenueCarousel" role="button" data-slide="next">
+                <a class="right carousel-control" href="#venueCarousel" role="button" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" style="color: #b61924"></span>
                     <span class="sr-only">Next</span>
                 </a>
                 </div>
             </div>
         </div>
-        </div>
+      </div>
     </div>
 </div>
 
