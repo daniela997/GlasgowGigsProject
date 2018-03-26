@@ -37,7 +37,6 @@ body {
 
 /* Top Bar */
 .w3-container#topbar {
-    background-color: rgba(233, 233, 233, 0.19);
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -127,7 +126,7 @@ nav ul { list-style-type: none; }
 }
 
 .footer {
-    background: rgba(233, 233, 233, 0.19)
+    background: #DBDBDB;
     position: fixed;
     left: 0;
     bottom: 0;
