@@ -12,5 +12,6 @@ urlpatterns = [
     url(r'^restricted/', views.restricted, name='restricted'),
     url(r'^oauth/', include('social_django.urls', namespace='social')),  #social login
     url(r'^avatar/', include('avatar.urls')), #avatar
-    url(r'^like_venue/$', views.like_venue, name='like_venue')
+    url(r'^like_venue/$', views.like_venue, name='like_venue'),
+    url(r'^like_artist/$', views.like_artist, name='like_artist'),
 ]

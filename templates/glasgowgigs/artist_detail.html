@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load embed_video_tags %}
 
+
 {% block content %}
 <div class="w3-container w3-padding-30" id="projects">
     <h1 class="w3-border-bottom w3-border-grey w3-padding-16">{{artist.name}}</h1>
@@ -25,9 +26,9 @@
             <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
     <div align="center">
-	<strong id="like_count">{{ artist.likes }}</strong> people like this venue! 
+	<strong id="like_count">{{ artist.likes }}</strong> people like this artist! 
 	{% if user.is_authenticated %} 
-		<button id="likes" data-venueid="{{ artist.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
+		<button id="likes" data-artistid="{{ artist.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
 	{% endif %} 
     </div>
     <br>

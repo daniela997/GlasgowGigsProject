@@ -205,4 +205,17 @@ def like_venue(request):
             venue.save()
     return HttpResponse(likes)
 
+@login_required
+def like_artist(request):
+    artist_id = None
+    if request.method == 'GET':
+        artist_id = request.GET['artist_id']
+    likes = 0
+    if artist_id:
+        artist = Artist.objects.get(id=int(artist_id))
+        if artist:
+            likes = artist.likes + 1
+            artist.likes = likes
+            artist.save()
+    return HttpResponse(likes)
 

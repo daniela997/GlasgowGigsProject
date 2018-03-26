@@ -87,42 +87,7 @@
 
 
 <!--Footer-->
-<footer class="container-fluid page-footer font-small grey pt-3 mt-4">
-
-    <!--Footer Links-->
-    <div class="text-center text-md-left">
-        <div class="row">
-
-            <!--First column-->
-            <div class="col-md-6">
-            <div class="search-container">
-            <h5 class="text-uppercase">Search GlasgowGigs</h5>
-                <form action="/action_page.php">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit"><i class="material-icons">search</i></button>
-                </form>
-            </div>
-            </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="text-uppercase">Links</h5>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="{% url 'about' %}">About</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!--Copyright-->
-    <div class="footer">
-          <p>© 2018 Copyright: GlasgowGigs</p>
-    </div>
-
-</footer>
+<footer></footer>
 </div>	
 
     <!--Styles-->
@@ -142,7 +107,8 @@
 	
 	<!--Scripts-->
 	
-	<script type="text/javascript" src={% static 'js/glasgowgigs-ajax.js' %}></script>
+	<script type="text/javascript" src={% static 'js/venue-ajax.js' %}></script>
+	<script type="text/javascript" src={% static 'js/artist-ajax.js' %}></script>
 	<script type="text/javascript" src={% static 'js/artist-carousel.js' %}></script>
     <script type="text/javascript" src={% static 'js/particles.js' %}></script>
     <script type="text/javascript" src={% static 'js/app.js' %}></script>
