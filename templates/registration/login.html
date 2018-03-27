@@ -1,25 +1,31 @@
 {% extends 'glasgowgigs/base.html' %}
 {% load staticfiles %}
-
 {% block content %}
-<div class="w3-container w3-padding-30" id="projects">
-    <h2 class="w3-border-bottom w3-border-grey w3-padding-16"><font color="black">Login</font></h2>  <div align="center">
-  <div id="fb-root"></div>
-	<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=230596227513786&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Login</button>
-  </form>
-  <br>
-  <p><strong> OR </strong></p>
-  <a href="{% url 'social:begin' 'twitter' %}"><img src="{% static 'images/twitter_signin.png' %}" alt="Login with Twitter"></a> 
-  <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+<div class="login-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+        <h2 class="text-center">Log in</h2>		
+        <div class="text-center social-btn">
+            <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"><a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a></div>
+            <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+            </div>
+        </div>
+		<div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            </div>
+        </div>        
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block login-btn">Log in</button>
+        </div>
+        
+    </form>
+    <div class="hint-text small">Don't have an account? <a href="{% url 'register' %}" class="text-success">Register Now!</a></div>
 </div>
 {% endblock %}
