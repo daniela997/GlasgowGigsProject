@@ -11,23 +11,9 @@
       <img src={{venue.photo.url}} alt={{venue.name}} width="100%"></br>
       <p>{{ venue.info }}</p>
       <div style="margin-left:20px;margin-top:20px">
-            <h4>Upcoming Events</h4>
-			<ul>
-				{% for event in events %}
-				<div class="gallery">
-                                    <a href="{{ event.get_absolute_url }}">
-                                    <div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
-                                     </a>
-				<div class="desc"><b>{{ event.name }}</b></div>
-				</div>
-				{% endfor %}
-			</ul>
         </div>
-    </div>
-
-    <div class="w3-conatiner w3-rest">
-        <p><strong>Social Media Links:</strong></p>
         <div align="center">
+        <h4><strong>Social Media Links:</strong></h4>
         {% if venue.instagram %}
             <p><a target="_blank" href={{venue.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
         {% endif %}
@@ -40,7 +26,8 @@
             <a target="_blank" href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
         {% endif %}
         </div>
-  <p><strong>Address:</strong></p>
+
+        <div align="center"><h4><strong>Address:</strong></h4></div>
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
  
@@ -56,7 +43,6 @@
 	{% endif %} 
 </div>
 
-
   </div>
 	<style>
       #map {
@@ -65,7 +51,7 @@
        }
     </style>
 	{% if venue.latitude and venue.longitude %}
-    <div align="center"><h3>Location: </h3></div>
+    <div align="center"><h4><strong>Location: </strong></h4></div>
     <div align="center"><div id="map"></div>
     <script>
       function initMap() {
@@ -86,6 +72,20 @@
     {% endif %}
 </div>
 </div>
+
+
+    <div class="w3-conatiner w3-rest">
+        <div align="center"><h4><strong>Upcoming Events</strong></h4></div>
+            <ul>
+		{% for event in events %}
+		    <div class="gallery">
+                    <a href="{{ event.get_absolute_url }}">
+                    <div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
+                    </a>
+		    <div class="desc"><b>{{ event.name }}</b></div>
+		    </div>
+		{% endfor %}
+	    </ul>
 </div>
  </div>
  </div>
