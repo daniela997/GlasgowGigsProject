@@ -125,3 +125,8 @@ nav ul { list-style-type: none; }
     clear: both;
 }
 
+ul {
+ list-style: none;
+}
+
+
