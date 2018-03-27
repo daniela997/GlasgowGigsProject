@@ -13,8 +13,19 @@
   <div class='w3-half'>
       <img src={{artist.photo.url}} alt={{artist.name}} width='100%'></br>
     <p>{{ artist.info }}</p>
-       <div style="margin-left:20px;margin-top:20px">
-            <h4>Upcoming Events in Glasgow</h4>
+    <div align="center"><p><strong>Genre: </strong>{{artist.genre}}</p></div>
+    <div align="center"><h4><strong>Social Media Links:</strong></h4></div>
+        <p><a target="_blank" href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.soundcloud}}><img src="{% static 'images/soundcloud-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
+            <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
+
+    </div>
+        
+    <div class='w3-container w3-rest'>
+    <div style="margin-left:20px;margin-top:20px">
+            <div align="center"><h4><strong>Upcoming Events in Glasgow</strong></h4></div>
 			<ul>
 				{% for event in events %}
 				<div class="gallery">
@@ -26,19 +37,8 @@
 				{% endfor %}
 			</ul>
         </div>
+        <br>
     </div>
-        
-
-    <p><strong>Genre:</strong>{{artist.genre}}</p>
-
-    <div class='w3-container w3-rest'>
-        <p><strong>Social Media Links:</strong></p>
-        <p><a target="_blank" href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a target="_blank" href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a target="_blank" href={{artist.soundcloud}}><img src="{% static 'images/soundcloud-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a target="_blank" href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
-            <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
-
     <div align="center">
 	{% if user.is_authenticated %} 
 		{% if artist in user.userprofile.favartists.all %}
