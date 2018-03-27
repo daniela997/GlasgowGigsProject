@@ -17,7 +17,12 @@
             <h4>Upcoming Events in Glasgow</h4>
 			<ul>
 				{% for event in events %}
-				<li>{{ event.name }}</li>
+				<div class="gallery">
+                                    <a href="{{ event.get_absolute_url }}">
+                                    <div class="thumbnail"><img src="{{venue.photo.url}}" alt="{{ artist.name }}"></div>
+                                     </a>
+				<div class="desc"><b>{{ event.name }}</b></div>
+				</div>
 				{% endfor %}
 			</ul>
         </div>

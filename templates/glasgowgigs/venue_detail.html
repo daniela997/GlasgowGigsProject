@@ -10,14 +10,21 @@
   <div class="w3-half">
       <img src={{venue.photo.url}} alt={{venue.name}} width="100%"></br>
       <p>{{ venue.info }}</p>
-      <div align="center"><h4>Upcomig Events</h4>
-        <ul>
-			{% for event in events %}
-			<li>{{ event.name }}</li>
-			{% endfor %}
-        </ul>
+      <div style="margin-left:20px;margin-top:20px">
+            <h4>Upcoming Events</h4>
+			<ul>
+				{% for event in events %}
+				<div class="gallery">
+                                    <a href="{{ event.get_absolute_url }}">
+                                    <div class="thumbnail"><img src="{{artist.photo.url}}" alt="{{ venue.name }}"></div>
+                                     </a>
+				<div class="desc"><b>{{ event.name }}</b></div>
+				</div>
+				{% endfor %}
+			</ul>
+        </div>
     </div>
-      </div>
+
     <div class="w3-conatiner w3-rest">
         <p><strong>Social Media Links:</strong></p>
         <div align="center">
