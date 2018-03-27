@@ -54,10 +54,12 @@
 	
 			{% else %}
                 <div class="non-log-btn" align="center">
-                    <a href="{% url 'login' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5); outline:red">Login</a>
+                    <a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">
+                        <img src="{% static 'images/register.png' %}" style="width:20%;"> Register</a>
                     </br>
                     </br>
-                    <a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Register</a>
+                    <a href="{% url 'login' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5); outline:red">
+                        <img src="{% static 'images/login.png' %}" style="width:20%;"> Login</a>
                 </div>
 
 			{% endif %}
