@@ -4,27 +4,47 @@
 
 <div class="container">
     <div class="page-header w3-border-grey w3-padding-10">
-        <h1>Profile</h1>
+        <h1>Profile</h1> </div>
         <h2>My bookings</h2>
-        <ul>
-			{% for booking in bookings %}
-			<li>{{ booking.name }}</li>
-			{% endfor %}
-        </ul>    
-        
+        <div class="w3-conatiner w3-rest">
+            <ul>
+		{% for booking in bookings %}
+		    <div class="gallery">
+                    <a href="{{ booking.get_absolute_url }}">
+                    <div class="thumbnail"><img src="{{booking.artist.photo.url}}" alt="{{ booking.name }}"></div>
+                    </a>
+		    <div class="desc"><b>{{ booking.name }}</b></div>
+		    </div>
+		{% endfor %}
+	    </ul>
+	</div>
         <h2>My favourite artists</h2>
-        <ul>
-			{% for artist in favartists %}
-			<li>{{ artist.name }}</li>
-			{% endfor %}
-        </ul>    
+        <div class="w3-conatiner w3-rest">
+            <ul>
+		{% for artist in favartists %}
+		    <div class="gallery">
+                    <a href="{{ artist.get_absolute_url }}">
+                    <div class="thumbnail"><img src="{{favartists.artist.photo.url}}" alt="{{ booking.name }}"></div>
+                    </a>
+		    <div class="desc"><b>{{ artist.name }}</b></div>
+		    </div>
+		{% endfor %}
+	    </ul>
+	</div> 
         
         <h2>My favourite venues</h2>
-        <ul>
-			{% for venue in favvenues %}
-			<li>{{ venue.name }}</li>
-			{% endfor %}
-        </ul>      
+        <div class="w3-conatiner w3-rest">
+            <ul>
+		{% for venue in favvenues %}
+		    <div class="gallery">
+                    <a href="{{ venue.get_absolute_url }}">
+                    <div class="thumbnail"><img src="{{favvenue.venue.photo.url}}" alt="{{ booking.name }}"></div>
+                    </a>
+		    <div class="desc"><b>{{ venue.name }}</b></div>
+		    </div>
+		{% endfor %}
+	    </ul>
+	</div>      
     </div>
 </div>
 

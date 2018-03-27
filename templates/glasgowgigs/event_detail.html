@@ -8,14 +8,15 @@
  <div class="w3-row">
   <div class="w3-half">
         <img src={{event.artist.photo.url}} alt={{event.artist.name}} width="100%"></br>
-			{% if user.is_authenticated %} 
-				<button id="book-event" data-eventid="{{ event.id }}" class="btn btn-primary btn-sm" type="button"> Going! </button> 
-			{% endif %}
     </div>
+    
 <div class="w3-container w3-rest">
   <p><strong>Location:</strong></p>
   <p>{{event.venue.address}}</p>
-  	<style>
+  {% if user.is_authenticated %} 
+        <div align="center"><button id="book-event" data-eventid="{{ event.id }}" class="btn btn-danger btn-sm" type="button"> Going! </button></div> 
+    {% endif %}
+    <style>
       #map {
         height: 400px;
         width: 75%;

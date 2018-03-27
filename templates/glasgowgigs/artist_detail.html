@@ -14,6 +14,16 @@
       <img src={{artist.photo.url}} alt={{artist.name}} width='100%'></br>
     <p>{{ artist.info }}</p>
     <div align="center"><p><strong>Genre: </strong>{{artist.genre}}</p></div>
+    <div align="center">
+	{% if user.is_authenticated %} 
+		{% if artist in user.userprofile.favartists.all %}
+		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
+		{% else %}
+		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
+		<button id="likes" data-artistid="{{ artist.id }}" class="btn btn-danger btn-sm" type="button"> Like </button> 
+		{% endif %} 
+	{% endif %}
+    </div>
     <div align="center"><h4><strong>Social Media Links:</strong></h4></div>
         <p><a target="_blank" href={{artist.instagram}}><img src="{% static 'images/instagram-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
             <a target="_blank" href={{artist.youtube}}><img src="{% static 'images/youtube-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
@@ -39,16 +49,7 @@
         </div>
         <br>
     </div>
-    <div align="center">
-	{% if user.is_authenticated %} 
-		{% if artist in user.userprofile.favartists.all %}
-		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
-		{% else %}
-		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
-		<button id="likes" data-artistid="{{ artist.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
-		{% endif %} 
-	{% endif %}
-    </div>
+    
     <br>
     {% if artist.video %}
 	<div align="center">{% video artist.video 'tiny' %}</div>
