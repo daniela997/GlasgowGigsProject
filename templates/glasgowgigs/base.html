@@ -37,27 +37,27 @@
                     <h4>Hello {{ user.username }}</h4>
                     <h4>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</h4>
                     </br>
-                    <a href="{% url 'profile' %}" class="btn btn-info btn-md ">Profile</a>
+                    <a href="{% url 'profile' %}" class="btn btn-info btn-md">Profile</a>
                     </br>
                     </br>
-                    <a href="{% url 'settings' %}" class="btn btn-info btn-md ">Settings</a>
+                    <a href="{% url 'settings' %}" class="btn btn-info btn-md">Settings</a>
                     </br>
                     </br>
                     <a href="{% url 'avatar_change' %}" class="btn btn-info btn-md">Change Avatar</a>
                     </br>
                     </br>
-                    <a href="{% url 'password' %}" class="btn btn-info btn-md ">Change Password</a>
+                    <a href="{% url 'password' %}" class="btn btn-info btn-md">Change Password</a>
                     </br>
                     </br>
-                    <a href="{% url 'logout' %}" class="btn btn-info btn-md">Logout</a>
+                    <a href="{% url 'logout' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Logout</a>
                 </div>
 	
 			{% else %}
                 <div class="non-log-btn" align="center">
-                    <a href="{% url 'login' %}" class="btn btn-info btn-md ">Login</a>
+                    <a href="{% url 'login' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5); outline:red">Login</a>
                     </br>
                     </br>
-                    <a href="{% url 'register' %}" class="btn btn-info btn-md ">Register</a>
+                    <a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Register</a>
                 </div>
 
 			{% endif %}
@@ -73,6 +73,7 @@
      style="color:#000000; font-family:'Arial Narrow';font-size:25px; background-color: #DBDBDB;">
 	<img src="{% static 'images/GG_logo_red2.png' %}" alt="logo" style="width:225px;height:40px;"/>
     <a href="{% url 'index' %}" class="w3-button">HOME</a>
+    <a href="{% url 'about' %}" class="w3-button">ABOUT</a>
     <a href="{% url 'artists' %}" class="w3-button">ARTISTS</a>
     <a href="{% url 'venues' %}" class="w3-button">VENUES</a>
     <a href="{% url 'events' %}" class="w3-button">EVENTS</a>
@@ -87,7 +88,7 @@
 
 
 <!--Footer-->
-<footer></footer>
+<div id="footer"><br><p>Copyright: GlasgowGigs 2018</p></br></div>
 </div>	
 
     <!--Styles-->
