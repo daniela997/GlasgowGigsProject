@@ -67,6 +67,8 @@ class Event(models.Model):
     bookings = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
+
+
    
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
@@ -88,8 +90,9 @@ class UserProfile(models.Model):
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
     bookings = models.ManyToManyField(Event, blank=True)
-    favourite_artists = models.ManyToManyField(Artist, blank=True)
-    favourite_venues = models.ManyToManyField(Venue, blank=True)
+    favartists = models.ManyToManyField(Artist, blank=True)
+    favvenues = models.ManyToManyField(Venue, blank=True)
+    bookings = models.ManyToManyField(Event, blank=True)
     
     def __str__(self):
         return self.user.username

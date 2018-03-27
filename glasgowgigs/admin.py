@@ -23,7 +23,7 @@ admin.site.register(Venue, VenueAdmin)
 
 # Define the artist class
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'artist', 'venue', 'views', 'date', 'bookings')
+    list_display = ('name', 'artist', 'venue', 'views', 'date')
     list_filter = ('date', 'venue', 'bookings', 'views')
     fieldsets = (
         ('General Information', {

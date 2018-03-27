@@ -13,7 +13,16 @@
   <div class='w3-half'>
       <img src={{artist.photo.url}} alt={{artist.name}} width='100%'></br>
     <p>{{ artist.info }}</p>
-    </div>    
+       <div style="margin-left:20px;margin-top:20px">
+            <h4>Upcoming Events in Glasgow</h4>
+			<ul>
+				{% for event in events %}
+				<li>{{ event.name }}</li>
+				{% endfor %}
+			</ul>
+        </div>
+    </div>
+        
 
     <p><strong>Genre:</strong>{{artist.genre}}</p>
 
@@ -26,23 +35,20 @@
             <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
     <div align="center">
-	<strong id="like_count">{{ artist.likes }}</strong> people like this artist! 
 	{% if user.is_authenticated %} 
+		{% if artist in user.userprofile.favartists.all %}
+		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
+		{% else %}
+		<strong id="like_count">{{ artist.likes }}</strong> people like this artist!
 		<button id="likes" data-artistid="{{ artist.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
-	{% endif %} 
+		{% endif %} 
+	{% endif %}
     </div>
     <br>
     {% if artist.video %}
 	<div align="center">{% video artist.video 'tiny' %}</div>
     {% endif %}
-        <div style="margin-left:20px;margin-top:20px">
-            <h4>Upcoming Events in Glasgow</h4>
-            {% for event in event_list %}
-                {% if event.artist.name is artist.name %}
-                    <p>{{ event.name }}</p>
-                {% endif %}
-            {% endfor %}
-        </div>
+
     </div>
 </div>
 </div>

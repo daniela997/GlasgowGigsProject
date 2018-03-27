@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse
-from glasgowgigs.models import Artist, Venue, Event
+from glasgowgigs.models import Artist, Venue, Event, User, UserProfile
 from django.views import generic
 from glasgowgigs.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
@@ -47,18 +47,10 @@ class ArtistListView(generic.ListView):
     template_name = 'glasgowgigs/artist_list.html'
     ordering = ['-likes']
 
-class ArtistListCarousel(generic.ListView):
-    model = Artist
-    template_name = 'glasgowgigs/index.html'
-
 class VenueListView(generic.ListView):
     model = Venue
     template_name = 'glasgowgigs/venue_list.html'
     ordering = ['-likes']
-
-class VenueListCarousel(generic.ListView):
-    model = Venue
-    template_name = 'glasgowgigs/index.html'
 
 class EventListView(generic.ListView):
     model = Event
@@ -68,16 +60,21 @@ class EventListView(generic.ListView):
 
 class ArtistDetailView(generic.DetailView):
     model = Artist
+    def get_context_data(self, **kwargs):
+        context = super(ArtistDetailView, self).get_context_data(**kwargs)
+        context['events'] = Event.objects.filter(artist=self.object)
+        return context
 
 class VenueDetailView(generic.DetailView):
     model = Venue
+    def get_context_data(self, **kwargs):
+        context = super(VenueDetailView, self).get_context_data(**kwargs)
+        context['events'] = Event.objects.filter(venue=self.object)
+        return context
 
 class EventDetailView(generic.DetailView):
     model = Event
-
-class UpcomingEventsView(generic.ListView):
-    model = Event
-    template_name = 'glasgowgigs/artist_detail'
+    
 
 def register(request):
     registered = False
@@ -158,8 +155,15 @@ def settings(request):
 
 @login_required
 def profile(request):
-    context_dict = {}
-    return render(request, 'registration/profile.html', context=context_dict)
+    user = request.user
+    userprofile = UserProfile.objects.get_or_create(user=user)[0]
+
+    bookings = userprofile.bookings.all().order_by('date')
+    favourite_artists = userprofile.favartists.all().order_by('-likes') 
+    favourite_venues = userprofile.favvenues.all().order_by('-likes') 
+
+         
+    return render(request, 'registration/profile.html', context={'bookings':bookings, 'favartists':favourite_artists, 'favvenues':favourite_venues})
 
 @login_required
 def password(request):
@@ -193,29 +197,56 @@ def user_logout(request):
 
 @login_required
 def like_venue(request):
+    user = request.user
+    userprofile = UserProfile.objects.get_or_create(user=user)[0]
     venue_id = None
     if request.method == 'GET':
         venue_id = request.GET['venue_id']
     likes = 0
     if venue_id:
-        venue = Venue.objects.get(id=int(venue_id))
+        venue = Venue.objects.get(id=venue_id)
         if venue:
             likes = venue.likes + 1
             venue.likes = likes
             venue.save()
+            userprofile.favvenues.add(Venue.objects.get(id=venue_id))
+
     return HttpResponse(likes)
 
 @login_required
 def like_artist(request):
+    user = request.user
+    userprofile = UserProfile.objects.get_or_create(user=user)[0]
     artist_id = None
     if request.method == 'GET':
-        artist_id = request.GET['artist_id']
+        artist_id = request.GET.get('artist_id')
     likes = 0
     if artist_id:
-        artist = Artist.objects.get(id=int(artist_id))
+        artist = Artist.objects.get(id=artist_id)
         if artist:
             likes = artist.likes + 1
             artist.likes = likes
             artist.save()
+            userprofile.favartists.add(Artist.objects.get(id=artist_id))
     return HttpResponse(likes)
+
+    
+@login_required
+def book_event(request):
+    user = request.user
+    userprofile = UserProfile.objects.get_or_create(user=user)[0]
+    event_id = None
+    if request.method == 'GET':
+        event_id = request.GET.get('event_id')
+    if event_id:
+        event = Event.objects.get(id=event_id)
+        if event in userprofile.bookings.all():
+            userprofile.bookings.remove(Event.objects.get(id=event_id))
+        else:
+            userprofile.bookings.add(Event.objects.get(id=event_id))
+    return HttpResponse()
+
+
+
+    
 

@@ -14,4 +14,6 @@ urlpatterns = [
     url(r'^avatar/', include('avatar.urls')), #avatar
     url(r'^like_venue/$', views.like_venue, name='like_venue'),
     url(r'^like_artist/$', views.like_artist, name='like_artist'),
+    url(r'^profile/$', views.profile, name='profile'),
+    url(r'^book_event/$', views.book_event, name='book_event'),
 ]

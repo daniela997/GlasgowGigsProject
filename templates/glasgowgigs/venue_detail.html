@@ -10,6 +10,13 @@
   <div class="w3-half">
       <img src={{venue.photo.url}} alt={{venue.name}} width="100%"></br>
       <p>{{ venue.info }}</p>
+      <div align="center"><h4>Upcomig Events</h4>
+        <ul>
+			{% for event in events %}
+			<li>{{ event.name }}</li>
+			{% endfor %}
+        </ul>
+    </div>
       </div>
     <div class="w3-conatiner w3-rest">
         <p><strong>Social Media Links:</strong></p>
@@ -26,15 +33,19 @@
             <a target="_blank" href={{venue.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
         {% endif %}
         </div>
-  <p><strong>Location:</strong></p>
+  <p><strong>Address:</strong></p>
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
-    <div align="center"><h4>Events</h4></div>
+ 
 
 <div align="center">
-	<strong id="like_count">{{ venue.likes }}</strong> people like this venue! 
 	{% if user.is_authenticated %} 
+		{% if venue in user.userprofile.favvenues.all %}
+		<strong id="like_count">{{ venue.likes }}</strong> people like this venue! 
+		{% else %}
+		<strong id="like_count">{{ venue.likes }}</strong> people like this venue!
 		<button id="likes" data-venueid="{{ venue.id }}" class="btn btn-primary btn-sm" type="button"> Like </button> 
+		{% endif %} 
 	{% endif %} 
 </div>
 

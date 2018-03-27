@@ -5,6 +5,26 @@
 <div class="container">
     <div class="page-header w3-border-grey w3-padding-10">
         <h1>Profile</h1>
+        <h2>My bookings</h2>
+        <ul>
+			{% for booking in bookings %}
+			<li>{{ booking.name }}</li>
+			{% endfor %}
+        </ul>    
+        
+        <h2>My favourite artists</h2>
+        <ul>
+			{% for artist in favartists %}
+			<li>{{ artist.name }}</li>
+			{% endfor %}
+        </ul>    
+        
+        <h2>My favourite venues</h2>
+        <ul>
+			{% for venue in favvenues %}
+			<li>{{ venue.name }}</li>
+			{% endfor %}
+        </ul>      
     </div>
 </div>
 
