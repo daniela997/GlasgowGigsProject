@@ -201,7 +201,7 @@ def like_venue(request):
     userprofile = UserProfile.objects.get_or_create(user=user)[0]
     venue_id = None
     if request.method == 'GET':
-        venue_id = request.GET['venue_id']
+        venue_id = request.GET.get('venue_id')
     likes = 0
     if venue_id:
         venue = Venue.objects.get(id=venue_id)
