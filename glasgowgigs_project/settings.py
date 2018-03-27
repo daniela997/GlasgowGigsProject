@@ -81,7 +81,7 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.twitter.TwitterOAuth',
     'social_core.backends.facebook.FacebookOAuth2',
-
+    'social_core.backends.google.GoogleOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -167,6 +167,9 @@ SOCIAL_AUTH_TWITTER_SECRET = 'dT4FIvfNNWQ0etdJiv2nEU1V5z8ffESyaV0RWu4zosobES7aJq
 
 SOCIAL_AUTH_FACEBOOK_KEY = '230596227513786'
 SOCIAL_AUTH_FACEBOOK_SECRET = '56131aab4f5126bc981b5fa1cae303b5'
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='471042840995-m2g9ui663m12ieh9rd7cgfi2uk24j6bo.apps.googleusercontent.com'  
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'jx74e9W1mHsSTuuNgRtT06-m' 
 
 SOCIAL_AUTH_LOGIN_ERROR_URL = '/settings/'
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/settings/'
