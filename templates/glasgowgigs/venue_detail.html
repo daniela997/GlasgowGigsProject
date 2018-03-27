@@ -16,7 +16,7 @@
 				{% for event in events %}
 				<div class="gallery">
                                     <a href="{{ event.get_absolute_url }}">
-                                    <div class="thumbnail"><img src="{{artist.photo.url}}" alt="{{ venue.name }}"></div>
+                                    <div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
                                      </a>
 				<div class="desc"><b>{{ event.name }}</b></div>
 				</div>

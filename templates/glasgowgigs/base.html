@@ -37,16 +37,16 @@
                     <h4>Hello {{ user.username }}</h4>
                     <h4>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</h4>
                     </br>
-                    <a href="{% url 'profile' %}" class="btn btn-info btn-md">Profile</a>
+                    <a href="{% url 'profile' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Profile</a>
                     </br>
                     </br>
-                    <a href="{% url 'settings' %}" class="btn btn-info btn-md">Settings</a>
+                    <a href="{% url 'settings' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Settings</a>
                     </br>
                     </br>
-                    <a href="{% url 'avatar_change' %}" class="btn btn-info btn-md">Change Avatar</a>
+                    <a href="{% url 'avatar_change' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Change Avatar</a>
                     </br>
                     </br>
-                    <a href="{% url 'password' %}" class="btn btn-info btn-md">Change Password</a>
+                    <a href="{% url 'password' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Change Password</a>
                     </br>
                     </br>
                     <a href="{% url 'logout' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(0,0,0,0.5)">Logout</a>
