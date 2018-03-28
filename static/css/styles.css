@@ -5,7 +5,7 @@ h1, h2 {
 }
 
 h3 {
-    color: #000000;
+    color: #b61924;
     font-family: "Verdana";
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 a:hover {
-    color: black;
+    color: #b61924;
 }
 
 #particles-js {
@@ -59,11 +59,13 @@ a:hover {
 }
 
 
+
 p {
     color: #000000;
     font-family: Verdana;
     text-align: center;
 }
+
 
 .navbar-default .navbar-fnt {
     font-size: 25px;
@@ -78,6 +80,8 @@ p {
     font-family: Verdana;
     list-style: none;
     text-align: center;
+    
+
 }
 
 .sidebar-nav {
@@ -117,9 +121,8 @@ html, body {
     border: none;
 }
 
-nav ul {
-    list-style-type: none;
-}
+nav ul { list-style-type: none; }
+
 
 .circular--square {
   border-top-left-radius: 50% 50%;
