@@ -31,7 +31,7 @@
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
  
-
+<!--Like Function-->
 <div align="center">
 	{% if user.is_authenticated %} 
 		{% if venue in user.userprofile.favvenues.all %}
@@ -44,6 +44,8 @@
 </div>
 
   </div>
+	 
+      <!--Google Maps-->
 	<style>
       #map {
         height: 400px;
