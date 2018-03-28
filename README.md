@@ -20,3 +20,9 @@ Resources used:
 5. Twitter API
 6. Facebook API
 7. GoogleMaps API
+8. W3Schools
+9. https://getbootstrap.com
+10. https://tutorialrepublic.com
+11. https://bootstrapious.com
+12. https://favicon-generator.org
+
