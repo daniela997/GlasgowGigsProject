@@ -193,7 +193,7 @@ def populate():
              "La Cheetah": {"date": datetime.date(2018, 7, 14), "bookings": 78, "views": 96}},
         "Snow Patrol":
             {"Sub Club": {"date": datetime.date(2018, 8, 20), "bookings": 109, "views": 140},
-             "Broadcast": {"date": datetime.date(2018, 4, 16), "bookings": 23, "views": 57},
+             "Barrowland Ballroom": {"date": datetime.date(2018, 4, 16), "bookings": 23, "views": 57},
              "The Art School": {"date": datetime.date(2018, 5, 30), "bookings": 45, "views": 86}},
         "The Jesus and Mary Chain":
              {"Centre of Contemporary Arts": {"date": datetime.date(2018, 4, 20), "bookings": 78, "views": 105},

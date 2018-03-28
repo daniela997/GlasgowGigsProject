@@ -31,7 +31,7 @@
   <p>{{venue.address}}</p>
   <div style="margin-left:20px;margin-top:20px">
  
-
+<!--Like Function-->
 <div align="center">
 	{% if user.is_authenticated %} 
 		{% if venue in user.userprofile.favvenues.all %}
@@ -44,6 +44,8 @@
 </div>
 
   </div>
+	 
+      <!--Google Maps-->
 	<style>
       #map {
         height: 400px;
@@ -74,18 +76,24 @@
 </div>
 
 
-    <div class="w3-conatiner w3-rest">
-        <div align="center"><h4><strong>Upcoming Events</strong></h4></div>
-            <ul>
-		{% for event in events %}
-		    <div class="gallery">
-                    <a href="{{ event.get_absolute_url }}">
-                    <div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
-                    </a>
-		    <div class="desc"><b>{{ event.name }}</b></div>
-		    </div>
-		{% endfor %}
-	    </ul>
+<!--Upcoming Events-->
+     <div class="w3-conatiner w3-rest">
+         <div align="center"><h4><strong>Upcoming Events:</strong></h4></div>
+
+             {% if events %}
+             {% for event in events %}
+         <ul>
+             <div class="gallery">
+                 <a href="{{ event.get_absolute_url }}">
+                     <div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
+                 </a>
+                 <div class="desc"><b>{{ event.name }}</b></div>
+             </div>
+             </ul>
+             {% endfor %}
+             {% else %}
+             <p>There are no events.</p>
+             {% endif %}
 </div>
  </div>
  </div>
