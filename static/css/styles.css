@@ -10,7 +10,11 @@ h3 {
 }
 
 h4 {
-    color: #FFFFFFF;
+    color: #000000;
+}
+
+h5 {
+    color: #000000;
 }
 
 body {
@@ -127,6 +131,7 @@ nav ul { list-style-type: none; }
 
 ul {
  list-style: none;
+ color: #000000;
 }
 
 .login-form {
