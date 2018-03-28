@@ -3,26 +3,36 @@
 
 {% block content %}
 <div align="center">
-<div class="w3-container w3-padding-30" id="projects">
-    <h2 class="w3-border-bottom w3-border-grey w3-padding-16"><font color="black">Register for GlasgowGigs</font></h2>
-{% if registered %}
-<p><strong>Thank You for Registering!</strong></p>
-<a href="{% url 'index' %}">Return to Home.</a><br />
-{% else %}
-<p><strong>Register Here!</strong></p><br />
-<form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+<div class="w3-container w3-padding-30" id="projects"><div class="signup-form">
+	<form method="post" action="{% url 'register' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2>Register</h2>
+		<p class="hint-text">Create your account on GlasgowGigs so you can browse local gigs, artists and venues!</p>
+        <div class="form-group">
+			<div class="row">
+				<div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>        
+        <div class="form-group">
+			<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a href="{% url 'about' %}">Terms of Use</a>.</label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-danger btn-lg btn-block">Register Now</button>
+        </div>
+		<div class="text-center">Already have an account? <a href="{% url 'login' %}">Sign in</a></div>
 
-{% csrf_token %}
-<!-- Display each form -->
-{{ user_form.as_p }}
-{{ profile_form.as_p }}
-
-
-<!-- Provide a button to click to submit the form. -->
-<input type="submit" name="submit" value="Register" />
-</form>
+    </form>
 </div>
-{% endif %}
 {% endblock %}
 
 

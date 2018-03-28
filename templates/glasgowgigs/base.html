@@ -83,16 +83,8 @@
     <a href="{% url 'events' %}" class="w3-button">EVENTS</a>
     <button class="w3-button w3-grey w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
 
-<!--Function for closing sidebar-->
-<script>
-    function w3_open() {
-        document.getElementById("mySidebar").style.display = "block";
-    }
-
-    function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-    }
-    </script>
+<!--Function for closing sidebar
+Edited: Please do not put scripts in the html file!!! Import external files instead! This script has been exported to close.js-->
     
 
 </div>
@@ -115,6 +107,7 @@
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
 	<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+	<link rel="stylesheet" href="{% static 'css/register.css' %}">
 
 	
 	<!-- Bootstrap core CSS -->
@@ -137,6 +130,7 @@
     <script type="text/javascript" src={% static 'js/particles.js' %}></script>
     <script type="text/javascript" src={% static 'js/app.js' %}></script>
     <script type="text/javascript" src={% static 'js/carousel.js' %}></script>
+    <script type="text/javascript" src={% static 'js/close.js' %}></script>
     
 
 
