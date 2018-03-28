@@ -1,6 +1,3 @@
-# To Run the test:
-# python manage.py test
-
 from django.test import TestCase
 from glasgowgigs.models import Artist, Venue, Event, UserProfile
 from django.test import Client
@@ -28,13 +25,6 @@ class ArtistTestCase(TestCase):
         artist.save()
         self.assertEqual(artist.slug, 'random-artist-string')
 
-"""
-    # Test that views are positive
-    def test_artist_pos_views(self):
-        artist = Artist(name='artist', views=-1)
-        artist.save()
-        self.assertEqual((artist.views >= 0), True)
-"""
 
 # Tests for Venues
 class VenueTestCase(TestCase):
@@ -82,3 +72,8 @@ class EventTestCase(TestCase):
         event = Event(name='Random Event String', venue=ven, artist=art, date='1996-03-03')
         event.save()
         self.assertEqual(event.slug, 'artist-venue-on-1996-03-03')
+
+class UserProfileTestCase(TestCase):
+
+    def setUp(self):
+        self.assertEqual(True, True)
