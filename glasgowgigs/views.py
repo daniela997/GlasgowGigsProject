@@ -13,7 +13,8 @@ from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.views.generic.list import ListView
 from django.views.generic.base import View
-from datetime import datetime
+from datetime import datetime
+
 from django.template import loader
 
 
@@ -37,7 +38,8 @@ def visitor_cookie_handler(request):
 		
 		request.session['last_visit'] = last_visit_cookie
 
-	request.session['visits'] = visits
+	request.session['visits'] = visits
+
      
 def index(request):
     # stats
@@ -49,9 +51,11 @@ def index(request):
     venue_top5 = Venue.objects.order_by('-likes')[:5]
 
     context_dict = {'num_artists':num_artists,'num_venues':num_venues,'num_events':num_events,'top_artists':artist_top5, 'top_venues':venue_top5}
-    visitor_cookie_handler(request)
+    visitor_cookie_handler(request)
 
-    context_dict['visits'] = request.session['visits']
+
+    context_dict['visits'] = request.session['visits']
+
     
     response = render(request, 'glasgowgigs/index.html', context = context_dict)
 
@@ -293,3 +297,4 @@ class SearchSubmitView(View):
 class SearchAjaxSubmitView(SearchSubmitView):
     template = 'glasgowgigs/search_results.html'
     response_message = 'We found the following events:'
+

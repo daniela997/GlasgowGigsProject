@@ -5,17 +5,17 @@ import os, sys
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
 django.setup()
-from glasgowgigs.models import Artist, Venue, Event
+from glasgowgigs.models import Artist, Venue, Event, UserProfile
+from django.contrib.auth.models import Group, User, Permission
 import datetime
 from django.core.files.images import ImageFile
 from embed_video.backends import detect_backend
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'glasgowgigs_project.settings')
-
-
-
+from django.contrib.contenttypes.models import ContentType
 
 
 def populate():
+
 
 
     artists = [
@@ -222,7 +222,32 @@ def populate():
                 artist = Artist.objects.get(name=a["name"])
                 add_event(venue, artist, events[a["name"]][v]["date"], events[a["name"]][v]["bookings"], events[a["name"]][v]["views"])
 
+    groups = [ "VenueOwners", "ArtistManagers"]
 
+    for g in groups:
+        g, created = Group.objects.get_or_create(name=g)
+    for g in groups:
+        if g == "VenueOwners":
+            group = Group.objects.get(name=g)
+
+            permission = Permission.objects.get(codename='perm_add_venue')
+            group.permissions.add(permission)
+
+            permission = Permission.objects.get(codename='perm_add_event')
+            group.permissions.add(permission)
+
+
+            
+        if g == "ArtistManagers":
+            group = Group.objects.get(name=g)
+            
+            permission = Permission.objects.get(codename='perm_add_artist')
+            group.permissions.add(permission)
+            
+            permission = Permission.objects.get(codename='perm_add_event')
+            group.permissions.add(permission)         
+
+    
 
 def add_artist(name, genre, likes, views, youtube, instagram, soundcloud, twitter, facebook, info, photo, video):
     a = Artist.objects.get_or_create(name=name)[0]
