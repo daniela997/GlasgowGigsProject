@@ -21,6 +21,10 @@ body {
     background-color: white;
 }
 
+a:hover {
+    color: black;
+}
+
 #particles-js {
   position: absolute;
   width: 100%;
