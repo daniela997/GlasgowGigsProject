@@ -32,6 +32,9 @@ urlpatterns = [
     url(r'^event/(?P<slug>[-\w]+)/$', views.EventDetailView.as_view(), name='event-detail'),
     url(r'^settings/$', views.settings, name='settings'),
     url(r'^settings/password/$', views.password, name='password'),
+    url(r'^search-submit/$', views.SearchSubmitView.as_view(), name='search-submit'),
+    url(r'^search-results/$', views.SearchAjaxSubmitView.as_view(), name='search-ajax-submit'),
+    
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

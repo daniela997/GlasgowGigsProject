@@ -13,7 +13,12 @@
 <div class="w3-container w3-rest">
   <p><strong>Address:</strong></p>
   <p>{{event.venue.address}}</p>
-	{% if user.is_authenticated %} 
+	{% if user.is_authenticated %}
+		{% if event.views > 1 %}
+		({{ event.views }} views)
+		{% elif event.views == 1 %}
+		({{ event.views }} view)
+		{% endif %} 
 		{% if event.is_future %}
         <div align="center"><button id="book-event" data-eventid="{{ event.id }}" class="btn btn-danger btn-sm" type="button"> Going! </button></div>
         {% else %}
