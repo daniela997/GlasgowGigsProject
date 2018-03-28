@@ -12,7 +12,10 @@ from django.contrib.auth.forms import AdminPasswordChangeForm, PasswordChangeFor
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.views.generic.list import ListView
-from datetime import datetime
+from django.views.generic.base import View
+from datetime import datetime
+from django.template import loader
+
 
 
 def get_server_side_cookie(request, cookie, default_val=None):
@@ -276,7 +279,22 @@ def book_event(request):
             userprofile.bookings.add(Event.objects.get(id=event_id))
     return HttpResponse()
 
+class SearchSubmitView(View):
+    template = 'glasgowgigs/search_submit.html'
+    response_message = 'This is the response'
 
+    def post(self, request):
+        template = loader.get_template(self.template)
+        query = request.POST.get('search', '')
 
-    
+        # a simple query for Events
+        events = Event.objects.filter(name__icontains=query)
 
+        context = {'name': self.response_message, 'query': query, 'events': events}
+
+        rendered_template = template.render(context, request)
+        return HttpResponse(rendered_template, content_type='text/html')
+
+class SearchAjaxSubmitView(SearchSubmitView):
+    template = 'glasgowgigs/search_results.html'
+    response_message = 'We found the following events:'

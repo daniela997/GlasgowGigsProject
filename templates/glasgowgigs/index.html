@@ -4,11 +4,10 @@
 
 <body>
 
-<div class="container-fluid">
-    <div class="page-header w3-border-grey w3-padding-10">
+    <div class="page-header w3-border-grey w3-padding-0">
         <h1>GlasgowGigs</h1>
     </div>
-    <div class="jumbotron">
+    <div class="container-fluid jumbotron">
         <p>Welcome to <em>GlasgowGigs</em>!
         This is a basic Django framework app with the purpose of connecting
         Glaswegian music fans with their favourite local acts and venues.
@@ -21,17 +20,27 @@
                 <li>{{ num_venues }} <strong>local venues</strong></li>
                 <li>{{ num_events }} <strong>local gigs</strong></li>
             </ul>
-        </div>
+        <div class="container-fluid" align="center">
+		<form id="form" role="form" action="{% url 'search-submit' %}" method="post">
+			{% csrf_token %}
+			<input name="search"
+				   id="search"
+				   type="search"
+				   placeholder="Start typing here"
+				   ic-post-to="{% url 'search-ajax-submit' %}"
+				   ic-trigger-on="keyup changed"
+				   ic-trigger-delay="300ms"
+				   ic-target="#search-result-container"/>
+		</form>
+		<span id="search-result-container"></span>
+		</div>
+		</div>
     </div>
-</div>
 
 
 <div class='container-fluid'>
-
     <div class='w3-row'>
-
         <div class='w3-half'>
-
             <h2>Top 5 Artists</h2>
             <div id="ArtistCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->

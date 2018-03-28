@@ -1,0 +1,18 @@
+{% if query %}
+	<h3>You searched for: <i>{{ query }}</i></h3>
+	<p>{{ name }}</p>
+	{% if events %}
+		<ul>
+		{% for event in events %}
+			{% if event.is_future %}
+				<div class="gallery">
+				  <a href="{{ event.get_absolute_url }}">
+					<div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ event.name }}"></div>
+				  </a>
+				  <div class="desc">{{ event.name }}</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+		</ul>
+	{% endif %}
+{% endif %}
