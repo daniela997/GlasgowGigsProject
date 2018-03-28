@@ -144,12 +144,18 @@ def settings(request):
         facebook_login = user.social_auth.get(provider='facebook')
     except UserSocialAuth.DoesNotExist:
         facebook_login = None
+        
+    try:
+        google_login = user.social_auth.get(provider='google-oauth2')
+    except UserSocialAuth.DoesNotExist:
+        google_login = None
 
     can_disconnect = (user.social_auth.count() > 1 or user.has_usable_password())
 
     return render(request, 'registration/settings.html', {
         'twitter_login': twitter_login,
         'facebook_login': facebook_login,
+        'google_login': google_login,
         'can_disconnect': can_disconnect
     })
 

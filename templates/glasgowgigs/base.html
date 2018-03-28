@@ -54,6 +54,9 @@
 	
 			{% else %}
                 <div class="non-log-btn" align="center">
+					<a href="{% url 'social:begin' 'facebook' %}" target="_blank" class="circlebtn-social circlebtn-facebook"><i class="fa fa-facebook"></i></a>
+					<a href="{% url 'social:begin' 'twitter' %}" target="_blank" class="circlebtn-social circlebtn-twitter"><i class="fa fa-twitter"></i></a>
+					<a href="{% url 'social:begin' 'google-oauth2' %}" target="_blank" class="circlebtn-social circlebtn-google-plus"><i class="fa fa-google"></i></a>
                     <a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">
                         <img src="{% static 'images/register.png' %}" style="width:20%;"> Register</a>
                     </br>
@@ -71,8 +74,7 @@
 
 
 <!--Header-->
-<div class="w3-container" div id="topbar"
-     style="color:#000000; font-family:'Arial Narrow';font-size:25px; background-color: #DBDBDB;">
+<div class="w3-container" div id="topbar" style="color:#000000; font-family:'Arial Narrow';font-size:25px; background-color: #DBDBDB;">
 	<img src="{% static 'images/GG_logo_red2.png' %}" alt="logo" style="width:225px;height:40px;"/>
     <a href="{% url 'index' %}" class="w3-button">HOME</a>
     <a href="{% url 'about' %}" class="w3-button">ABOUT</a>
@@ -112,11 +114,14 @@
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
 
+	
 	<!-- Bootstrap core CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto|Open+Sans:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- Bootstrap 4 Scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
