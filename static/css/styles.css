@@ -63,6 +63,15 @@ p {
 }
 
 
+.navbar-default .navbar-fnt {
+    font-size: 25px;
+}
+
+.form-control:focus {
+  border-color: #b61924;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
 .index-nav{
     font-family: Verdana;
     list-style: none;
