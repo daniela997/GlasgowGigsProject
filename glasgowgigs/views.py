@@ -142,7 +142,7 @@ def register(request):
                     'profile_form': profile_form,
                     'registered': registered})
 
-def user_login(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -160,7 +160,8 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
 
     else:
-        return render(request, 'glasgowgigs/login.html', {})
+        return
+    return render(request, 'glasgowgigs/login.html', {})
 
 
 @login_required
