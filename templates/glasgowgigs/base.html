@@ -14,8 +14,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!--Tab icon-->
-        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
-        <link rel="icon" href="{% static 'images/favicon.ico' %}">
+        <link rel="shortcut icon" type="image/png" href="glasgowgigs-favicon.png">
+        <link rel="icon" type="image/png" href="glasgowgigs-favicon.png">
 	
 	<title>GlasgowGigs</title>
 </head>
@@ -85,10 +85,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="navbar-default navbar-fnt" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url 'about' %}">ABOUT <span class="sr-only">(current)</span></a></li>
                     <li><a href="{% url 'artists' %}">ARTISTS</a></li>
                     <li><a href="{% url 'venues' %}">VENUES</a></li>
                     <li><a href="{% url 'events' %}">EVENTS</a></li>
+                    <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">HELP <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="{% url 'about' %}">ABOUT</a></li>
+            <li><a href="{% url 'terms-and-conditions' %}">T&C</a></li>
+            <li><a href="#">Q&A</a></li>
+          </ul>
+        </li>
                     </ul>
                 </ul>
             </div><!-- /.container-fluid -->

@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^settings/password/$', views.password, name='password'),
     url(r'^search-submit/$', views.SearchSubmitView.as_view(), name='search-submit'),
     url(r'^search-results/$', views.SearchAjaxSubmitView.as_view(), name='search-ajax-submit'),
+    url(r'^terms-and-conditions/$', views.TermsAndConditions, name='terms-and-conditions'),
     
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
