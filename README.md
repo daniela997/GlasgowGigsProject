@@ -25,4 +25,5 @@ Resources used:
 10. https://tutorialrepublic.com
 11. https://bootstrapious.com
 12. https://favicon-generator.org
+13. https://pixlr.com
 
