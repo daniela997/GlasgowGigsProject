@@ -11,20 +11,18 @@
     </div>
     
 <div class="w3-container w3-rest">
-  <p><strong>Location:</strong></p>
+  <p><strong>Address:</strong></p>
   <p>{{event.venue.address}}</p>
-  {% if user.is_authenticated %} 
-        <div align="center"><button id="book-event" data-eventid="{{ event.id }}" class="btn btn-danger btn-sm" type="button"> Going! </button></div> 
+	{% if user.is_authenticated %} 
+		{% if event.is_future %}
+        <div align="center"><button id="book-event" data-eventid="{{ event.id }}" class="btn btn-danger btn-sm" type="button"> Going! </button></div>
+        {% else %}
+        <div align="center">This is a past event!</div>
+        {% endif %}
     {% endif %}
-    <style>
-      #map {
-        height: 400px;
-        width: 75%;
-       }
-    </style>
 
    <div align="center"><h3>Location: </h3></div>
-    <div align="center"><div id="map"></div>
+   <div align="center"><div id="map"></div>
     <script>
       function initMap() {
         var location = {lat: {{event.venue.latitude}}, lng: {{event.venue.longitude}} };
@@ -38,9 +36,8 @@
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARbWl1n1ErFh0xCa_HHVtPC642A2iDH4Y&callback=initMap">
-    </script>
+
+
 </div>
 </div>
 {% endblock %}

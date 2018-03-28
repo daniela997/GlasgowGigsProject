@@ -31,30 +31,47 @@
             <a target="_blank" href={{artist.twitter}}><img src="{% static 'images/twitter-icon.png' %}" alt="index" style="width:48px;height:48px"></a>
             <a target="_blank" href={{artist.facebook}}><img src="{% static 'images/facebook-icon.png' %}" alt="index" style="width:48px;height:48px"></a></p>
 
+	{% if artist.video %}
+	<div align="center">{% video artist.video 'tiny' %}</div>
+    {% endif %}
     </div>
         
     <div class='w3-container w3-rest'>
     <div style="margin-left:20px;margin-top:20px">
-            <div align="center"><h4><strong>Upcoming Events in Glasgow</strong></h4></div>
-			<ul>
-				{% for event in events %}
-				<div class="gallery">
-                                    <a href="{{ event.get_absolute_url }}">
-                                    <div class="thumbnail"><img src="{{event.venue.photo.url}}" alt="{{ artist.name }}"></div>
-                                     </a>
-				<div class="desc"><b>{{ event.name }}</b></div>
-				</div>
-				{% endfor %}
-			</ul>
+			 {% if events %}
+				<div class="w3-container w3-padding-10" id="projects">
+				<div align="center"><h4><strong>Upcoming gigs by {{ artist.name }}:</strong></h4></div>
+				 {% for event in events %}
+					{% if event.is_future %}
+						<div class="gallery">
+							<a href="{{ event.get_absolute_url }}">
+								<div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
+							</a>
+							<div class="desc"><b>{{ event.name }}</b></div>
+						</div>
+					{% endif %}
+				 {% endfor %}
+				 </div>
+				<div class="w3-container w3-padding-10" id="projects">
+				<div align="center"><h4><strong>Past gigs by {{ artist.name }}:</strong></h4></div>
+					{% for event in events %}
+						{% if event.is_past %}
+							<div class="gallery">
+								<a href="{{ event.get_absolute_url }}">
+									<div class="thumbnail"><img src="{{event.artist.photo.url}}" alt="{{ venue.name }}"></div>
+								</a>
+								<div class="desc"><b>{{ event.name }}</b></div>
+							</div>
+						{% endif %}
+					{% endfor %}
+				 </div>
+				 
+			{% else %}
+			<div align="center"><p>There are no events by {{ artist.name }}.</p></div>
+			{% endif %}
+			
         </div>
-        <br>
     </div>
-    
-    <br>
-    {% if artist.video %}
-	<div align="center">{% video artist.video 'tiny' %}</div>
-    {% endif %}
-
     </div>
 </div>
 </div>

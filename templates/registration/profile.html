@@ -7,20 +7,19 @@
         <h1>Profile</h1> </div>
         <h2>My bookings</h2>
         <div class="w3-conatiner w3-rest">
-            <ul>
 		{% for booking in bookings %}
+		  {% if booking.is_future %}
 		    <div class="gallery">
                     <a href="{{ booking.get_absolute_url }}">
                     <div class="thumbnail"><img src="{{booking.artist.photo.url}}" alt="{{ booking.name }}"></div>
                     </a>
 		    <div class="desc"><b>{{ booking.name }}</b></div>
 		    </div>
+		   {% endif %}
 		{% endfor %}
-	    </ul>
-	</div>
+		</div>
         <h2>My favourite artists</h2>
         <div class="w3-conatiner w3-rest">
-            <ul>
 		{% for artist in favartists %}
 		    <div class="gallery">
                     <a href="{{ artist.get_absolute_url }}">
@@ -29,12 +28,10 @@
 		    <div class="desc"><b>{{ artist.name }}</b></div>
 		    </div>
 		{% endfor %}
-	    </ul>
 	</div> 
         
         <h2>My favourite venues</h2>
         <div class="w3-conatiner w3-rest">
-            <ul>
 		{% for venue in favvenues %}
 		    <div class="gallery">
                     <a href="{{ venue.get_absolute_url }}">
@@ -43,8 +40,22 @@
 		    <div class="desc"><b>{{ venue.name }}</b></div>
 		    </div>
 		{% endfor %}
-	    </ul>
 	</div>      
+    
+        <h2>My past gigs</h2>
+        <div class="w3-conatiner w3-rest">
+		{% for booking in bookings %}
+		  {% if booking.is_past %}
+		    <div class="gallery">
+                    <a href="{{ booking.get_absolute_url }}">
+                    <div class="thumbnail"><img src="{{booking.artist.photo.url}}" alt="{{ booking.name }}"></div>
+                    </a>
+		    <div class="desc"><b>{{ booking.name }}</b></div>
+		    </div>
+		   {% endif %}
+		{% endfor %}
+		</div>    
+    
     </div>
 </div>
 

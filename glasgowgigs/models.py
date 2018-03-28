@@ -6,6 +6,8 @@ from django.db.models.signals import post_save
 from social_core.backends.facebook import FacebookOAuth2
 from social_core.backends.twitter import TwitterOAuth
 from embed_video.fields import EmbedVideoField
+from datetime import date
+
 
 
 class Artist(models.Model):
@@ -67,9 +69,7 @@ class Event(models.Model):
     bookings = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
-
-
-   
+       
     def __str__(self): # For Python 2, use __unicode__ too
         return self.name
     def save (self, *args, **kwargs):
@@ -84,15 +84,22 @@ class Event(models.Model):
 
     def get_absolute_url(self):
         return reverse('event-detail', kwargs={'slug': self.slug})
+    @property
+    def is_future(self):
+        return self.date > date.today()
+
+    @property
+    def is_past(self):
+        return self.date < date.today()
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     facebook = models.URLField(blank=True)
     instagram = models.URLField(blank=True)
-    bookings = models.ManyToManyField(Event, blank=True)
     favartists = models.ManyToManyField(Artist, blank=True)
     favvenues = models.ManyToManyField(Venue, blank=True)
     bookings = models.ManyToManyField(Event, blank=True)
+    
     
     def __str__(self):
         return self.user.username
