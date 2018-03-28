@@ -38,3 +38,6 @@ class IndexPageTests(TestCase):
                 return False
         # Check if it contains views message
         self.assertIn('views: 1'.lower(), response.content.decode('ascii').lower())
+
+    # Test artist detail page created
+    # Test Like button function

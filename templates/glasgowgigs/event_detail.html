@@ -3,12 +3,17 @@
 {% load static %}
 {% block content %}
 <div class="w3-container w3-padding-30" id="projects">
-    <h1 class="w3-border-bottom w3-border-grey w3-padding-16"><font color="black">{{ event.name }}</font></h1>  </div>
+    <h2 class="w3-border-bottom w3-border-grey w3-padding-16"></a>
+        <a href="{{ event.artist.get_absolute_url }}">{{ event.artist.name }}</a> @
+        <a href="{{ event.venue.get_absolute_url }}">{{ event.venue.name }}</a>
+        on {{ event.date }}
+    </h2>
+</div>
 <div class="w3-container">
  <div class="w3-row">
-  <div class="w3-half">
-        <img src={{event.artist.photo.url}} alt={{event.artist.name}} width="100%" style="border:5px solid #DBDBDB"></br>
-    </div>
+     <div class="w3-half">
+        <img src={{event.artist.photo.url}} alt={{event.artist.name}} width="100%" style="border:5px solid #b61924"></br>
+     </div>
     
 <div class="w3-container w3-rest">
   <p><strong>Address:</strong></p>

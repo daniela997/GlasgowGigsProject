@@ -22,86 +22,97 @@
 
 
 
-<div>
+<body>
 
 <!--Sidebar-->
 <nav>
-	<ul>
-		<div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
-			<div id="particles-js">
-			<button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()"><div align="right">&#10006</div></button>
-			<div class="centered">
+    <ul>
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-right" style="width:200px;right:0;" id="mySidebar">
+            <div id="particles-js">
+                <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()"><div align="right">&#10006</div></button>
 
-			{% if user.is_authenticated %}
-                <div align="center">
-                    <h4><strong>Hello {{ user.username }}</strong></h4>
-                    <h4>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</h4>
-                    </br>
-                    <a href="{% url 'profile' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Profile</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'settings' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Settings</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'avatar_change' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Change Avatar</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'password' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Change Password</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'logout' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Logout</a>
-                </div>
-	
-			{% else %}
-                <div class="non-log-btn" align="center">
-					<a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">
-                        <img src="{% static 'images/register.png' %}" style="width:20%;"> Register</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'login' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5); outline:red">
-                        <img src="{% static 'images/login.png' %}" style="width:20%;"> Login</a>
-                    </br>
-                    </br>
-                    <a href="{% url 'social:begin' 'facebook' %}" target="_blank" class="circlebtn-social circlebtn-facebook"><i class="fa fa-facebook"></i></a>
-					<a href="{% url 'social:begin' 'twitter' %}" target="_blank" class="circlebtn-social circlebtn-twitter"><i class="fa fa-twitter"></i></a>
-					<a href="{% url 'social:begin' 'google-oauth2' %}" target="_blank" class="circlebtn-social circlebtn-google-plus"><i class="fa fa-google"></i></a>
-                </div>
+                <div class="centered">
+                    {% if user.is_authenticated %}
+                    <div align="center">
+                        <h4><strong>Hello {{ user.username }}</strong></h4>
+                        <h4>{% avatar user 100 class="img-circle img-responsive" id="user_avatar" %}</h4>
+                        </br>
+                        <a href="{% url 'profile' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Profile</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'settings' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Settings</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'avatar_change' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Change Avatar</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'password' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Change Password</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'logout' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">Logout</a>
+                    </div>
 
-			{% endif %}
-			</div>
-			</div>
-		</div>
+                    {% else %}
+                    <div class="non-log-btn" align="center">
+                        <a href="{% url 'register' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5)">
+                            <img src="{% static 'images/register.png' %}" style="width:20%;"> Register</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'login' %}" class="btn btn-default btn-md" style="color: white; background-color:rgba(96,96,96,0.5); outline:red">
+                            <img src="{% static 'images/login.png' %}" style="width:20%;"> Login</a>
+                        </br>
+                        </br>
+                        <a href="{% url 'social:begin' 'facebook' %}" target="_blank" class="circlebtn-social circlebtn-facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="{% url 'social:begin' 'twitter' %}" target="_blank" class="circlebtn-social circlebtn-twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="{% url 'social:begin' 'google-oauth2' %}" target="_blank" class="circlebtn-social circlebtn-google-plus"><i class="fa fa-google"></i></a>
+                    </div>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
     </ul>
 </nav>
 
-<!--Header-->
-<div class="w3-container" div id="topbar" style="color:#000000; font-family:'Arial Narrow';font-size:25px; background-color: #DBDBDB;">
-	<img src="{% static 'images/GG_logo_red2.png' %}" alt="logo" style="width:225px;height:40px;"/>
-    <a href="{% url 'index' %}" class="w3-button">HOME</a>
-    <a href="{% url 'about' %}" class="w3-button">ABOUT</a>
-    <a href="{% url 'artists' %}" class="w3-button">ARTISTS</a>
-    <a href="{% url 'venues' %}" class="w3-button">VENUES</a>
-    <a href="{% url 'events' %}" class="w3-button">EVENTS</a>
-    <button class="w3-button w3-grey w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
-</div>
+    <!--Navbar-->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'images/GG_logo_red2.png' %}" alt="logo" style="width:225px;height:40px;"/></a>
+            </div>
 
-<!--Function for closing sidebar
-Edited: Please do not put scripts in the html file!!! Import external files instead! This script has been exported to close.js-->
-    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="navbar-default navbar-fnt" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'about' %}">ABOUT <span class="sr-only">(current)</span></a></li>
+                    <li><a href="{% url 'artists' %}">ARTISTS</a></li>
+                    <li><a href="{% url 'venues' %}">VENUES</a></li>
+                    <li><a href="{% url 'events' %}">EVENTS</a></li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                        <button class="w3-button w3-white w3-xlarge w3-right w3-hide-large" onclick="w3_open()">&#9776;</button>
+                    </ul>
+                </ul>
+            </div><!-- /.container-fluid -->
+        </div>
+    </nav>
 
+    <div class="col-sm-10">
+        {% block content %}{% endblock %}
+    </div>
 
-      <div class="col-sm-10">
-      {% block content %}{% endblock %}
-      </div>
+    <!--Footer-->
+    <div style="clear: both">
+        <div id="footer"><br><p>Copyright: GlasgowGigs 2018</p></br></div>
+    </div>
 
-<div style="clear: both">
-
-
-<!--Footer-->
-<div id="footer"><br><p>Copyright: GlasgowGigs 2018</p></br></div>
-</div>	
-
-	<!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400|Roboto|Open+Sans:300,400,700" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -113,9 +124,8 @@ Edited: Please do not put scripts in the html file!!! Import external files inst
     <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
 	<link rel="stylesheet" href="{% static 'css/carousel.css' %}">
 	<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	<link rel="stylesheet" href="{% static 'css/map.css' %}">
-    <link rel="stylesheet" href="{% static 'css/gallery.css' %}">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 	<!-- External Scripts -->
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
