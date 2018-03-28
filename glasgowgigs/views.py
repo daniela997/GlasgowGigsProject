@@ -15,6 +15,7 @@ from django.views.generic.list import ListView
 from django.views.generic.base import View
 from datetime import datetime
 
+
 from django.template import loader
 
 
@@ -67,6 +68,11 @@ def index(request):
 def about(request):
     context_dict = {}
     return render(request, 'glasgowgigs/about.html', context=context_dict)
+
+def TermsAndConditions(request):
+        context_dict = {}
+        return render(request, 'glasgowgigs/T&C.html', context=context_dict)
+ 
 
 class IndexView(generic.ListView):
     # Define the template to be used
@@ -136,7 +142,7 @@ def register(request):
                     'profile_form': profile_form,
                     'registered': registered})
 
-def user_login(request):
+def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -154,7 +160,8 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
 
     else:
-        return render(request, 'glasgowgigs/login.html', {})
+        return
+    return render(request, 'glasgowgigs/login.html', {})
 
 
 @login_required
